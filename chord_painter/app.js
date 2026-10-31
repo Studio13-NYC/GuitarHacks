@@ -354,6 +354,7 @@
   }
   function outcome(result){
     if(result==='inactive')return;
+    if(mode==='guess'&&['wrong','timeout'].includes(result))$('guess-input').value='';
     if(round.status==='correct')message('Correct. '+C.name(round.root,round.id)+' — nicely done.','correct');
     else if(round.status==='failed')message('Question failed. The answer is '+C.name(round.root,round.id)+'.','failed');
     else message((result==='timeout'?'Time’s up for that guess.':'Not quite.')+' '+(round.limit-round.used)+' '+(round.limit-round.used===1?'guess':'guesses')+' left. Fresh timer started.','wrong');
@@ -362,6 +363,7 @@
     if(inputMode==='play'&&locked()&&playActive&&calibrated)beginAnswer();
     render();
     if(practice.complete)review.open({id:practice.id,canRetry:round.status==='failed'});
+    else if(mode==='guess'&&locked()&&!document.querySelector('dialog[open]'))$('guess-input').focus({preventScroll:true});
   }
   function targets(){
     const ids=data.config.pool==='triads'?['major','minor','dim']:data.config.pool==='sevenths'?['7','maj7','m7','m7b5','dim7','mMaj7']:['major','minor','dim','7','maj7','m7','m7b5','dim7','mMaj7'];
@@ -442,6 +444,7 @@
     if(locked()){message('Paused while you were away. Press Resume when you’re ready.','paused');render();}
     else if(wasListening)render();
   }
+  $('open-explorer').onclick=()=>{pauseForNavigation();if(bridge)bridge.explore();else window.open('./explorer.html','_blank','noopener');};
   document.addEventListener('visibilitychange',()=>{
     if(document.hidden)pauseForNavigation();
     else if(bridge&&inputMode==='play'&&mode!=='guess'&&!playActive&&!inRound())calibrate();

@@ -212,6 +212,7 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.store = Store(data_dir)
         self.painter = None
+        self.explorer = None
         self.jam = None
         self.stems = None
         self.settings = self.store.settings()
@@ -240,7 +241,7 @@ class MainWindow(QMainWindow):
         self.build_results()
         self.home_page=HomePage()
         self.home_page.notes.connect(self.show_notes)
-        self.home_page.everywhere.connect(self.show_everywhere)
+        self.home_page.everywhere.connect(self.show_explorer)
         self.home_page.painter.connect(self.show_painter)
         self.home_page.connection.connect(self.connection_settings)
         self.home_page.jam.connect(self.show_jam)
@@ -390,6 +391,7 @@ class MainWindow(QMainWindow):
             self.painter=PainterView(self.store.directory,assets,self,settings=self.store.settings,
                 capture_factory=self.capture_factory,available=lambda: self.capture is None and not self.stopping)
             self.painter.bridge.leave.connect(self.show_home)
+            self.painter.bridge.exploreRequested.connect(self.show_explorer)
             self.pages.addWidget(self.painter)
 
     def show_painter(self):
@@ -398,6 +400,23 @@ class MainWindow(QMainWindow):
         self.prepare_painter()
         self.setWindowTitle('GuitarHacks · Chord Painter')
         self.pages.setCurrentWidget(self.painter)
+
+    def show_explorer(self):
+        self.splash_timer.stop()
+        self.pause()
+        if self.explorer is None:
+            from painter_view import ExplorerView
+            assets=Path(sys._MEIPASS) if getattr(sys,'frozen',False) else Path(__file__).resolve().parent
+            self.explorer=ExplorerView(assets,self)
+            self.explorer.bridge.leave.connect(self.show_home)
+            self.explorer.bridge.practice.connect(self.explore_practice)
+            self.pages.addWidget(self.explorer)
+        self.setWindowTitle('GuitarHacks · Fretboard Explorer')
+        self.pages.setCurrentWidget(self.explorer)
+
+    def explore_practice(self,note):
+        self.show_everywhere()
+        self.note_combo.setCurrentIndex(self.note_combo.findData(note))
 
     def show_jam(self):
         self.splash_timer.stop()
@@ -1088,6 +1107,8 @@ class MainWindow(QMainWindow):
         if self.capture and not self.capture.wait(3000):
             event.ignore()
             return
+        if self.explorer:
+            self.explorer.shutdown()
         self.store.close()
         self.closed=True
         event.accept()

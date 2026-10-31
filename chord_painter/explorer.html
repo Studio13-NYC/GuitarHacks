@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fretboard Explorer · GuitarHacks</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="explorer.css"></head>
+<body class="explorer-page"><main class="explorer-shell">
+  <header class="card-heading"><div><h1>Fretboard Explorer</h1><p>Look up a note or chord. See where it lives.</p></div><button id="explorer-back" class="quiet">← Home</button></header>
+  <form id="lookup-form" class="lookup-controls">
+    <label>Look up<select id="lookup-kind"><option value="note">Note</option><option value="chord">Chord</option></select></label>
+    <label class="lookup-name">Name<input id="lookup-name" value="B" placeholder="B, F#, B♭" maxlength="45" autocomplete="off" spellcheck="false"></label>
+    <button class="primary" type="submit">Show me</button>
+    <label>Fret range<select id="lookup-range"><option value="12">Open–12</option><option value="14" selected>Open–14</option><option value="24">Open–24</option></select></label>
+  </form>
+  <p id="lookup-error" role="alert"></p>
+  <section id="lookup-result" aria-label="Lookup result">
+    <div class="lookup-summary"><div><h2 id="lookup-title"></h2><p id="lookup-description"></p></div><div id="lookup-tones" class="tones"></div></div>
+    <p id="lookup-help"></p>
+    <div class="lookup-scroll" tabindex="0" role="region" aria-label="Fretboard positions"><table id="lookup-board" aria-label="Notes on the fretboard"></table></div>
+    <p id="lookup-detail" role="status"></p>
+  </section>
+  <button id="find-everywhere" class="quiet" hidden>Practice this note · Find Everywhere →</button>
+  <details><summary>Supported chords</summary><p id="supported-chords"></p><p>Use any root, including sharps or flats. Slash chords such as C/E show the requested bass note. This reference is unscored and does not open your audio input.</p></details>
+</main><script src="core.js"></script><script src="explorer.js"></script></body></html>

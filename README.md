@@ -10,7 +10,7 @@ This repository contains the Windows app, local Chord Painter, StemSlicer and Ne
 stem-separation script, MVSep outputs, and Wasteland practice backing tracks.
 Its working directory is `D:\Studio13\Lab\Music\GuitarHacks\StemSlicer`.
 
-A Windows guitar practice app. Open `D:\Studio13\Lab\Music\GuitarHacks\FretboardFiend\release\GuitarHacks.exe`. The short splash leads to **Home**, with four section cards: **Note flash cards**, **Find everywhere**, **Chord Painter**, and **StemSlicer**. Practice works without a separate Python installation or account; StemSlicer uses its installed local Python environment and models.
+A Windows guitar practice app. Open `D:\Studio13\Lab\Music\GuitarHacks\FretboardFiend\release\GuitarHacks.exe`. The short splash leads to **Home**, with four section cards: **Note flash cards**, **Fretboard Explorer**, **Chord Painter**, and **StemSlicer**. Practice works without a separate Python installation or account; StemSlicer uses its installed local Python environment and models.
 
 Choose **Chord Painter** from Home. Paint a six-string chord box, see note names and intervals, identify the chord, or play either timed guessing game. It starts with a C major E shape at fret 8. Results stay local. See [CHORD-PAINTER.md](CHORD-PAINTER.md) for controls, scoring, build commands and the offline Android home-screen version. The two audio sections open their setup screens before listening starts. **Connection settings** is available on Home. **Home** returns from section setup and results; **End run · Home** stops an audio run and saves unfinished cards as skipped. Chord Painter pauses when you return Home and retains the round for your return during the same app session.
 
@@ -22,7 +22,7 @@ The separate candidate at `build\jam-windows-midi-candidate\GuitarHacks.exe` add
 
 ## A practice run
 
-Choose Note flash cards or Find everywhere from Home. The Flash cards setup card offers four modes. In flash-card modes the app names the target note and string; “any” means that the app varies that part of the prompt.
+Choose Note flash cards from Home, or Fretboard Explorer to look up a note/chord. A note result offers Practice this note to enter Find Everywhere. The Flash cards setup card offers four modes. In flash-card modes the app names the target note and string; “any” means that the app varies that part of the prompt.
 
 | Mode | Select |
 | --- | --- |
@@ -59,7 +59,9 @@ Input requires a quiet interval, a note above the volume threshold, and roughly 
 
 Only reliable in-tolerance notes count as attempts. Unclear pitch, clipping, overflow, out-of-tolerance tuning and exact-card octave-only differences do not consume attempts. The countdown continues, so unresolved input can still produce a timeout. Octave differences can be harmonics. The app detects pitch, not the physical string or finger, and cannot separate guitar from a loud voice or another instrument. Use clean single notes, E2–F♯5. The detector's 70–850 Hz analysis range accommodates fret 14 on the high E string and modest detuning.
 
-## Find everywhere
+## Fretboard Explorer and Find Everywhere
+
+From Home, open **Fretboard Explorer**. Choose Note or Chord, enter a name, and select **Show me**. See notes, intervals and all matching positions through fret 12, 14 or 24. Select a dot for string, fret, octave and frequency. Lookup is unscored and requires no audio connection. Chords use the same 15 types as Chord Painter; the map shows available chord tones rather than a full fingering. To practice a note, choose **Practice this note · Find Everywhere**.
 
 Select a note and find every occurrence from open strings through fret 14, in any order. Each pitch has a quota equal to the number of physical positions that produce it. The stopwatch starts after calibration; the race ends when all quotas are filled. There are no forced gaps between successful answers. Mute briefly and pick again for each attempt.
 
@@ -142,7 +144,7 @@ October 14, 2026: 42 tests cover generated audio through the actual widgets, six
 
 ## Home screen
 
-The Windows app opens at Home after its short splash. The four cards open Note flash cards, Find everywhere, Chord Painter, and StemSlicer. Each card describes its module; the Connection settings button below them opens the existing input settings. At narrower window sizes the cards stack vertically and Home scrolls. Keyboard users can Tab through the cards and press Space to open one.
+The Windows app opens at Home after its short splash. The four cards open Note flash cards, Fretboard Explorer, Chord Painter, and StemSlicer. Each card describes its module; the Connection settings button below them opens the existing input settings. At narrower window sizes the cards stack vertically and Home scrolls. Keyboard users can Tab through the cards and press Space to open one.
 
 Flash-card note/string choices, lesson, timer, and attempt limit are preserved when visiting Find everywhere. Returning Home from an audio exercise stops capture. Returning Home from Chord Painter pauses its timer without clearing its in-memory round; Resume is explicit when you return. Closing the app still discards an unfinished Painter round. `--painter` continues to open that section directly for an intentional shortcut.
 

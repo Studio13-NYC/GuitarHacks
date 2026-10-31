@@ -18,6 +18,7 @@ class PainterBridge(QObject):
     voiceStatus = Signal(str)
     voiceCommand = Signal(str)
     reviewReady = Signal(str, str)
+    exploreRequested = Signal()
 
     def __init__(self, data_dir, parent=None):
         super().__init__(parent)
@@ -105,6 +106,10 @@ class PainterBridge(QObject):
             self.error.emit(f'Could not save Chord Painter practice: {exc}')
 
     @Slot()
+    def explore(self):
+        self.exploreRequested.emit()
+
+    @Slot()
     def back(self):
         self.suspend.emit()
         self.leave.emit()
@@ -116,6 +121,42 @@ class PainterPage(QWebEnginePage):
 
     def acceptNavigationRequest(self, url, kind, main_frame):
         return url.scheme() in ('file', 'qrc', 'about', 'data')
+
+
+class ExplorerBridge(QObject):
+    leave = Signal()
+    practice = Signal(int)
+
+    @Slot()
+    def back(self):
+        self.leave.emit()
+
+    @Slot(int)
+    def findEverywhere(self, note):
+        if 0 <= note <= 11:
+            self.practice.emit(note)
+
+
+class ExplorerView(QWidget):
+    """Unscored reference using the same chord definitions as Chord Painter."""
+    def __init__(self, assets, parent=None):
+        super().__init__(parent)
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(0, 0, 0, 0)
+        self.web = QWebEngineView(self)
+        self.profile = QWebEngineProfile(self)
+        self.page = PainterPage(self.profile, self.web)
+        self.web.setPage(self.page)
+        self.channel = QWebChannel(self.page)
+        self.bridge = ExplorerBridge(self.channel)
+        self.channel.registerObject('explorer', self.bridge)
+        self.page.setWebChannel(self.channel)
+        layout.addWidget(self.web)
+        self.web.setUrl(QUrl.fromLocalFile(str(Path(assets) / 'chord_painter' / 'explorer.html')))
+
+    def shutdown(self):
+        self.web.setPage(None)
+        self.page.deleteLater()
 
 
 class PainterView(QWidget):

@@ -1,5 +1,17 @@
 # Chord Painter verification
 
+## Fretboard Explorer and clear incorrect guesses - October 31, 2026 (candidate)
+
+Home's former Find Everywhere card now opens Fretboard Explorer. The reference uses the shared chord library for named note/chord lookups and exposes the existing Find Everywhere exercise from a note result. Lookup is unscored, requires no audio or GPT, and shows all standard-tuning positions in the selected open–12/14/24 range. Root spelling is retained for flat/sharp chord names; supported chord types and slash bass are explicit. The existing separately published ChordLab Sites checkout is unchanged.
+
+Incorrect Guess answers and timeouts clear the entry and retain typing focus while another guess is available. Blank submissions do not count as another miss; final failure still opens round review. This is the current app's only quiz text-entry field.
+
+- `node --test test_explorer.cjs test_painter.cjs`: 16 passed, including all 15 chord types across 12 roots, note positions, enharmonic spelling, slash bass, invalid names and existing scoring.
+- `.venv\Scripts\python.exe -m unittest test_home test_painter_listening`: 24 passed (`build/explorer-ui-tests.log`). Real Qt navigation preserves flash-card settings and leaves input closed; wrong-answer/timeout clearing and final review behavior are exercised.
+- `.venv\Scripts\python.exe -m unittest test_explorer_view`: 2 passed (`build/explorer-view-tests.log`). Real embedded lookup, selected-position detail, note handoff, fret range, invalid-input handling and visible result bounds are checked. Screenshots: `build/explorer-note.png`, `build/explorer-chord.png`.
+- Actual Edge browser: Cmaj7 tone list, open–24 columns, open B selection/details and native-only exercise visibility passed (`output/playwright/explorer-browser.png`). No user scores or audio were used.
+- Candidate build: `powershell -NoProfile -ExecutionPolicy Bypass -File .\build.ps1 -OutputDirectory build\explorer-release`; log `build/explorer-build.log`. Installation and Azure deployment are pending at this entry.
+
 ## Round review, career chart and local JSON - October 31, 2026 (installed and deployed)
 
 Installed after explicit approval and reopened with `--painter`. Backup: `backups/painter-local-file-install-20261031-152548` (previous executable and full data folder). All seven data files matched before reopening; the installed executable matches the verified candidate. SHA-256: `d87e041f139a50c94540926989c822c918648487e6c421afc6184469f0a3d418`. All 11 packaged frontend/contract assets match source, with no env file packaged. The reopened native UI was observed running Guess; the user resumed practicing, so that round was left untouched. No post-install startup error/traceback log lines were found. Build: `powershell -NoProfile -ExecutionPolicy Bypass -File .\build.ps1 -OutputDirectory build\painter-local-file-release`, log `build/painter-local-file-build.log`.

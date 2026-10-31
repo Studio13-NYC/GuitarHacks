@@ -66,11 +66,11 @@
     const sounding=frets.flatMap((f,i)=>f===null?[]:[OPEN[i]+f]);
     return chord.bass===null || chord.bass===mod(Math.min(...sounding));
   }
-  function tone(root, pc, id) {
+  function tone(root, pc, id, rootName=NOTES[root]) {
     const interval=mod(pc-root), type=quality(id);
     const index=type ? type.intervals.indexOf(interval) : -1;
     const degree=index>=0?type.degrees[index]:['1','♭2','2','♭3','3','4','♭5','5','♭6','6','♭7','7'][interval];
-    const rootName=NOTES[root], letter=LETTERS[(LETTERS.indexOf(rootName[0])+Number(degree.at(-1))-1)%7];
+    const letter=LETTERS[(LETTERS.indexOf(rootName[0])+Number(degree.at(-1))-1)%7];
     let diff=mod(pc-NATURAL[letter]);if(diff>6)diff-=12;
     return {degree,note:letter+(diff>0?'♯'.repeat(diff):'♭'.repeat(-diff))};
   }

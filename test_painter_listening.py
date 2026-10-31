@@ -277,6 +277,26 @@ class PainterListeningTests(unittest.TestCase):
         self.assertEqual([r['attempt'] for r in saved['history']],[1,2,3])
         self.assertEqual(self.js("document.getElementById('accuracy').textContent"),'33%')
 
+    def test_wrong_guess_clears_entry_without_consuming_an_extra_guess(self):
+        self.js("document.querySelector('[data-mode=guess]').click();document.getElementById('questions').value=1;document.getElementById('questions').dispatchEvent(new Event('change'));document.getElementById('limit').value=2;document.getElementById('limit').dispatchEvent(new Event('change'));document.getElementById('start').click();document.getElementById('guess-input').value='wrong';document.getElementById('guess-form').requestSubmit()")
+        self.assertEqual(self.js("document.getElementById('guess-input').value"),'')
+        self.assertEqual(self.js("document.activeElement.id"),'guess-input')
+        self.assertEqual(self.js("document.getElementById('attempts').textContent"),'1 / 2')
+        self.js("document.getElementById('guess-form').requestSubmit()")
+        self.assertEqual(self.js("document.getElementById('attempts').textContent"),'1 / 2')
+        self.js("document.getElementById('guess-input').value='still wrong';document.getElementById('guess-form').requestSubmit()")
+        self.assertEqual(self.js("document.getElementById('guess-input').value"),'')
+        self.assertTrue(self.js("document.getElementById('review-dialog').open"))
+        saved=json.loads((Path(self.temp.name)/'chord-painter.json').read_text())
+        self.assertEqual([e['result'] for e in saved['history'][0]['events']],['wrong','wrong'])
+
+    def test_timeout_clears_partial_text_for_the_next_guess(self):
+        self.js("document.querySelector('[data-mode=guess]').click();document.getElementById('start').click();document.getElementById('guess-input').value='Cm';window.qaOriginalNow=Date.now;Date.now=()=>window.qaOriginalNow()+21000")
+        QTest.qWait(250)
+        self.js("Date.now=window.qaOriginalNow")
+        self.assertEqual(self.js("document.getElementById('guess-input').value"),'')
+        self.assertEqual(self.js("document.getElementById('attempts').textContent"),'1 / 3')
+
     def test_production_view_enables_voice_with_explicit_capture_factory(self):
         from voice_commands import VoiceCommands
         view=PainterView(self.temp.name,ROOT,settings=lambda:self.settings,capture_factory=TestCapture)
