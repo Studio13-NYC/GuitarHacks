@@ -23,7 +23,7 @@ def credentials():
             if sep and name.strip() in ('OPENAI_API_KEY','GUITARHACKS_COACH_MODEL'):
                 config[name.strip()]=value.strip().strip('\"\'')
     key=os.environ.get('OPENAI_API_KEY') or config.get('OPENAI_API_KEY','')
-    model=os.environ.get('GUITARHACKS_COACH_MODEL') or config.get('GUITARHACKS_COACH_MODEL','gpt-5.4-mini')
+    model=os.environ.get('GUITARHACKS_COACH_MODEL') or config.get('GUITARHACKS_COACH_MODEL','gpt-6.1-terra')
     return key,model
 
 
@@ -37,6 +37,7 @@ def request_body(raw,model):
         if not isinstance(row,dict) or row.get('id') not in TYPE_IDS:raise ValueError('Invalid chord type.')
     return {
         'model':model,'store':False,'max_output_tokens':3000,
+        'reasoning':{'effort':'medium' if model.startswith('gpt-6-astra') else 'high'},
         'instructions':CONTRACT['instructions'],
         'input':json.dumps(value,ensure_ascii=False),
         'text':{'format':{'type':'json_schema','name':'practice_review','strict':True,'schema':SCHEMA}},

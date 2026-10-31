@@ -36,7 +36,8 @@ async function review(req,context,{env=process.env,fetcher=fetch,now=Date.now}={
     const result=await fetcher('https://api.openai.com/v1/responses',{
       method:'POST',redirect:'error',signal:AbortSignal.timeout(35000),
       headers:{'Authorization':`Bearer ${env.OPENAI_API_KEY}`,'Content-Type':'application/json'},
-      body:JSON.stringify({model:env.GUITARHACKS_COACH_MODEL||'gpt-5.4-mini',store:false,max_output_tokens:3000,
+      body:JSON.stringify({model:env.GUITARHACKS_COACH_MODEL||'gpt-6.1-terra',store:false,max_output_tokens:3000,
+        reasoning:{effort:(env.GUITARHACKS_COACH_MODEL||'gpt-6.1-terra').startsWith('gpt-6-astra')?'medium':'high'},
         instructions:contract.instructions,input:JSON.stringify(payload),
         text:{format:{type:'json_schema',name:'practice_review',strict:true,schema:contract.schema}}})
     });

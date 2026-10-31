@@ -19,7 +19,7 @@ test('Successful review sends bounded structured request and returns advice only
  const advice={summary:'Major needs practice. Preference considered.',priorities:[{id:'major',priority:1,reason:'Two failures.'}]};
  const fetcher=async(url,options)=>{
    assert.equal(url,'https://api.openai.com/v1/responses');
-   const body=JSON.parse(options.body);assert.equal(body.store,false);assert.ok(body.text.format.strict);assert.equal(JSON.parse(body.input).notes,payload.notes);
+   const body=JSON.parse(options.body);assert.equal(body.model,"gpt-6.1-terra");assert.deepEqual(body.reasoning,{effort:"high"});assert.equal(body.store,false);assert.ok(body.text.format.strict);assert.equal(JSON.parse(body.input).notes,payload.notes);
    return {ok:true,text:async()=>JSON.stringify({status:'completed',output:[{type:'message',content:[{type:'output_text',text:JSON.stringify(advice)}]}]})};
  };
  const result=await review(req(),null,{env,fetcher,now:()=>20000});assert.equal(result.status,200);assert.deepEqual(result.jsonBody,advice);

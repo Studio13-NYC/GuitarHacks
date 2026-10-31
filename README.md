@@ -1,5 +1,7 @@
 # GuitarHacks
 
+Current OpenAI model routing: [Terra/high and Astra/medium](OPENAI-MODELS.md).
+
 ## Source repository
 
 This repository contains the Windows app, local Chord Painter, StemSlicer and NeuralNote integration code, tests, build scripts, lessons, and app assets. It excludes installed executables, local environments, model weights, soundfonts, recordings, exported stems/MIDI, logs, and saved practice data. The independently managed `sites/chord-painter` and `NeuralNote/source` checkouts are not part of this repository; see their module setup guides. Clone/build setup still requires these local dependencies where applicable.
