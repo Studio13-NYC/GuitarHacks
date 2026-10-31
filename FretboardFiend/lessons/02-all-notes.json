@@ -1,0 +1,926 @@
+{
+  "version": 1,
+  "id": "all-notes-v1",
+  "title": "All notes · all strings",
+  "description": "Find notes including sharps and flats. Frets 1–12, standard tuning.",
+  "cards": [
+    {
+      "id": "note-0-string-6",
+      "prompt": "Play C\non the low E string",
+      "instruction": "String 6. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 8 on the thickest string (low E / string 6). That is C3.",
+      "midi": 48,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "note-0-string-5",
+      "prompt": "Play C\non the A string",
+      "instruction": "String 5. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 3 on the A string (string 5). That is C3.",
+      "midi": 48,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "note-0-string-4",
+      "prompt": "Play C\non the D string",
+      "instruction": "String 4. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 10 on the D string (string 4). That is C4.",
+      "midi": 60,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "note-0-string-3",
+      "prompt": "Play C\non the G string",
+      "instruction": "String 3. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 5 on the G string (string 3). That is C4.",
+      "midi": 60,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "note-0-string-2",
+      "prompt": "Play C\non the B string",
+      "instruction": "String 2. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 1 on the B string (string 2). That is C4.",
+      "midi": 60,
+      "match": "exact",
+      "string": 2
+    },
+    {
+      "id": "note-0-string-1",
+      "prompt": "Play C\non the high E string",
+      "instruction": "String 1. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 8 on the thinnest string (high E / string 1). That is C5.",
+      "midi": 72,
+      "match": "exact",
+      "string": 1
+    },
+    {
+      "id": "note-1-string-6",
+      "prompt": "Play C♯\non the low E string",
+      "instruction": "String 6. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 9 on the thickest string (low E / string 6). That is C♯3.",
+      "midi": 49,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "note-1-string-5",
+      "prompt": "Play C♯\non the A string",
+      "instruction": "String 5. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 4 on the A string (string 5). That is C♯3.",
+      "midi": 49,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "note-1-string-4",
+      "prompt": "Play C♯\non the D string",
+      "instruction": "String 4. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 11 on the D string (string 4). That is C♯4.",
+      "midi": 61,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "note-1-string-3",
+      "prompt": "Play C♯\non the G string",
+      "instruction": "String 3. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 6 on the G string (string 3). That is C♯4.",
+      "midi": 61,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "note-1-string-2",
+      "prompt": "Play C♯\non the B string",
+      "instruction": "String 2. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 2 on the B string (string 2). That is C♯4.",
+      "midi": 61,
+      "match": "exact",
+      "string": 2
+    },
+    {
+      "id": "note-1-string-1",
+      "prompt": "Play C♯\non the high E string",
+      "instruction": "String 1. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 9 on the thinnest string (high E / string 1). That is C♯5.",
+      "midi": 73,
+      "match": "exact",
+      "string": 1
+    },
+    {
+      "id": "note-2-string-6",
+      "prompt": "Play D♭\non the low E string",
+      "instruction": "String 6. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 9 on the thickest string (low E / string 6). That is D♭3.",
+      "midi": 49,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "note-2-string-5",
+      "prompt": "Play D♭\non the A string",
+      "instruction": "String 5. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 4 on the A string (string 5). That is D♭3.",
+      "midi": 49,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "note-2-string-4",
+      "prompt": "Play D♭\non the D string",
+      "instruction": "String 4. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 11 on the D string (string 4). That is D♭4.",
+      "midi": 61,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "note-2-string-3",
+      "prompt": "Play D♭\non the G string",
+      "instruction": "String 3. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 6 on the G string (string 3). That is D♭4.",
+      "midi": 61,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "note-2-string-2",
+      "prompt": "Play D♭\non the B string",
+      "instruction": "String 2. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 2 on the B string (string 2). That is D♭4.",
+      "midi": 61,
+      "match": "exact",
+      "string": 2
+    },
+    {
+      "id": "note-2-string-1",
+      "prompt": "Play D♭\non the high E string",
+      "instruction": "String 1. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 9 on the thinnest string (high E / string 1). That is D♭5.",
+      "midi": 73,
+      "match": "exact",
+      "string": 1
+    },
+    {
+      "id": "note-3-string-6",
+      "prompt": "Play D\non the low E string",
+      "instruction": "String 6. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 10 on the thickest string (low E / string 6). That is D3.",
+      "midi": 50,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "note-3-string-5",
+      "prompt": "Play D\non the A string",
+      "instruction": "String 5. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 5 on the A string (string 5). That is D3.",
+      "midi": 50,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "note-3-string-4",
+      "prompt": "Play D\non the D string",
+      "instruction": "String 4. One octave above open D.\nDo not use the open string.",
+      "hint": "Press fret 12 on the D string (string 4). That is D4.",
+      "midi": 62,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "note-3-string-3",
+      "prompt": "Play D\non the G string",
+      "instruction": "String 3. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 7 on the G string (string 3). That is D4.",
+      "midi": 62,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "note-3-string-2",
+      "prompt": "Play D\non the B string",
+      "instruction": "String 2. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 3 on the B string (string 2). That is D4.",
+      "midi": 62,
+      "match": "exact",
+      "string": 2
+    },
+    {
+      "id": "note-3-string-1",
+      "prompt": "Play D\non the high E string",
+      "instruction": "String 1. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 10 on the thinnest string (high E / string 1). That is D5.",
+      "midi": 74,
+      "match": "exact",
+      "string": 1
+    },
+    {
+      "id": "note-4-string-6",
+      "prompt": "Play D♯\non the low E string",
+      "instruction": "String 6. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 11 on the thickest string (low E / string 6). That is D♯3.",
+      "midi": 51,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "note-4-string-5",
+      "prompt": "Play D♯\non the A string",
+      "instruction": "String 5. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 6 on the A string (string 5). That is D♯3.",
+      "midi": 51,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "note-4-string-4",
+      "prompt": "Play D♯\non the D string",
+      "instruction": "String 4. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 1 on the D string (string 4). That is D♯3.",
+      "midi": 51,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "note-4-string-3",
+      "prompt": "Play D♯\non the G string",
+      "instruction": "String 3. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 8 on the G string (string 3). That is D♯4.",
+      "midi": 63,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "note-4-string-2",
+      "prompt": "Play D♯\non the B string",
+      "instruction": "String 2. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 4 on the B string (string 2). That is D♯4.",
+      "midi": 63,
+      "match": "exact",
+      "string": 2
+    },
+    {
+      "id": "note-4-string-1",
+      "prompt": "Play D♯\non the high E string",
+      "instruction": "String 1. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 11 on the thinnest string (high E / string 1). That is D♯5.",
+      "midi": 75,
+      "match": "exact",
+      "string": 1
+    },
+    {
+      "id": "note-5-string-6",
+      "prompt": "Play E♭\non the low E string",
+      "instruction": "String 6. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 11 on the thickest string (low E / string 6). That is E♭3.",
+      "midi": 51,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "note-5-string-5",
+      "prompt": "Play E♭\non the A string",
+      "instruction": "String 5. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 6 on the A string (string 5). That is E♭3.",
+      "midi": 51,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "note-5-string-4",
+      "prompt": "Play E♭\non the D string",
+      "instruction": "String 4. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 1 on the D string (string 4). That is E♭3.",
+      "midi": 51,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "note-5-string-3",
+      "prompt": "Play E♭\non the G string",
+      "instruction": "String 3. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 8 on the G string (string 3). That is E♭4.",
+      "midi": 63,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "note-5-string-2",
+      "prompt": "Play E♭\non the B string",
+      "instruction": "String 2. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 4 on the B string (string 2). That is E♭4.",
+      "midi": 63,
+      "match": "exact",
+      "string": 2
+    },
+    {
+      "id": "note-5-string-1",
+      "prompt": "Play E♭\non the high E string",
+      "instruction": "String 1. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 11 on the thinnest string (high E / string 1). That is E♭5.",
+      "midi": 75,
+      "match": "exact",
+      "string": 1
+    },
+    {
+      "id": "note-6-string-6",
+      "prompt": "Play E\non the low E string",
+      "instruction": "String 6. One octave above open low E.\nDo not use the open string.",
+      "hint": "Press fret 12 on the thickest string (low E / string 6). That is E3.",
+      "midi": 52,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "note-6-string-5",
+      "prompt": "Play E\non the A string",
+      "instruction": "String 5. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 7 on the A string (string 5). That is E3.",
+      "midi": 52,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "note-6-string-4",
+      "prompt": "Play E\non the D string",
+      "instruction": "String 4. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 2 on the D string (string 4). That is E3.",
+      "midi": 52,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "note-6-string-3",
+      "prompt": "Play E\non the G string",
+      "instruction": "String 3. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 9 on the G string (string 3). That is E4.",
+      "midi": 64,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "note-6-string-2",
+      "prompt": "Play E\non the B string",
+      "instruction": "String 2. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 5 on the B string (string 2). That is E4.",
+      "midi": 64,
+      "match": "exact",
+      "string": 2
+    },
+    {
+      "id": "note-6-string-1",
+      "prompt": "Play E\non the high E string",
+      "instruction": "String 1. One octave above open high E.\nDo not use the open string.",
+      "hint": "Press fret 12 on the thinnest string (high E / string 1). That is E5.",
+      "midi": 76,
+      "match": "exact",
+      "string": 1
+    },
+    {
+      "id": "note-7-string-6",
+      "prompt": "Play F\non the low E string",
+      "instruction": "String 6. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 1 on the thickest string (low E / string 6). That is F2.",
+      "midi": 41,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "note-7-string-5",
+      "prompt": "Play F\non the A string",
+      "instruction": "String 5. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 8 on the A string (string 5). That is F3.",
+      "midi": 53,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "note-7-string-4",
+      "prompt": "Play F\non the D string",
+      "instruction": "String 4. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 3 on the D string (string 4). That is F3.",
+      "midi": 53,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "note-7-string-3",
+      "prompt": "Play F\non the G string",
+      "instruction": "String 3. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 10 on the G string (string 3). That is F4.",
+      "midi": 65,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "note-7-string-2",
+      "prompt": "Play F\non the B string",
+      "instruction": "String 2. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 6 on the B string (string 2). That is F4.",
+      "midi": 65,
+      "match": "exact",
+      "string": 2
+    },
+    {
+      "id": "note-7-string-1",
+      "prompt": "Play F\non the high E string",
+      "instruction": "String 1. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 1 on the thinnest string (high E / string 1). That is F4.",
+      "midi": 65,
+      "match": "exact",
+      "string": 1
+    },
+    {
+      "id": "note-8-string-6",
+      "prompt": "Play F♯\non the low E string",
+      "instruction": "String 6. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 2 on the thickest string (low E / string 6). That is F♯2.",
+      "midi": 42,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "note-8-string-5",
+      "prompt": "Play F♯\non the A string",
+      "instruction": "String 5. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 9 on the A string (string 5). That is F♯3.",
+      "midi": 54,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "note-8-string-4",
+      "prompt": "Play F♯\non the D string",
+      "instruction": "String 4. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 4 on the D string (string 4). That is F♯3.",
+      "midi": 54,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "note-8-string-3",
+      "prompt": "Play F♯\non the G string",
+      "instruction": "String 3. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 11 on the G string (string 3). That is F♯4.",
+      "midi": 66,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "note-8-string-2",
+      "prompt": "Play F♯\non the B string",
+      "instruction": "String 2. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 7 on the B string (string 2). That is F♯4.",
+      "midi": 66,
+      "match": "exact",
+      "string": 2
+    },
+    {
+      "id": "note-8-string-1",
+      "prompt": "Play F♯\non the high E string",
+      "instruction": "String 1. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 2 on the thinnest string (high E / string 1). That is F♯4.",
+      "midi": 66,
+      "match": "exact",
+      "string": 1
+    },
+    {
+      "id": "note-9-string-6",
+      "prompt": "Play G♭\non the low E string",
+      "instruction": "String 6. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 2 on the thickest string (low E / string 6). That is G♭2.",
+      "midi": 42,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "note-9-string-5",
+      "prompt": "Play G♭\non the A string",
+      "instruction": "String 5. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 9 on the A string (string 5). That is G♭3.",
+      "midi": 54,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "note-9-string-4",
+      "prompt": "Play G♭\non the D string",
+      "instruction": "String 4. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 4 on the D string (string 4). That is G♭3.",
+      "midi": 54,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "note-9-string-3",
+      "prompt": "Play G♭\non the G string",
+      "instruction": "String 3. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 11 on the G string (string 3). That is G♭4.",
+      "midi": 66,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "note-9-string-2",
+      "prompt": "Play G♭\non the B string",
+      "instruction": "String 2. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 7 on the B string (string 2). That is G♭4.",
+      "midi": 66,
+      "match": "exact",
+      "string": 2
+    },
+    {
+      "id": "note-9-string-1",
+      "prompt": "Play G♭\non the high E string",
+      "instruction": "String 1. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 2 on the thinnest string (high E / string 1). That is G♭4.",
+      "midi": 66,
+      "match": "exact",
+      "string": 1
+    },
+    {
+      "id": "note-10-string-6",
+      "prompt": "Play G\non the low E string",
+      "instruction": "String 6. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 3 on the thickest string (low E / string 6). That is G2.",
+      "midi": 43,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "note-10-string-5",
+      "prompt": "Play G\non the A string",
+      "instruction": "String 5. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 10 on the A string (string 5). That is G3.",
+      "midi": 55,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "note-10-string-4",
+      "prompt": "Play G\non the D string",
+      "instruction": "String 4. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 5 on the D string (string 4). That is G3.",
+      "midi": 55,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "note-10-string-3",
+      "prompt": "Play G\non the G string",
+      "instruction": "String 3. One octave above open G.\nDo not use the open string.",
+      "hint": "Press fret 12 on the G string (string 3). That is G4.",
+      "midi": 67,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "note-10-string-2",
+      "prompt": "Play G\non the B string",
+      "instruction": "String 2. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 8 on the B string (string 2). That is G4.",
+      "midi": 67,
+      "match": "exact",
+      "string": 2
+    },
+    {
+      "id": "note-10-string-1",
+      "prompt": "Play G\non the high E string",
+      "instruction": "String 1. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 3 on the thinnest string (high E / string 1). That is G4.",
+      "midi": 67,
+      "match": "exact",
+      "string": 1
+    },
+    {
+      "id": "note-11-string-6",
+      "prompt": "Play G♯\non the low E string",
+      "instruction": "String 6. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 4 on the thickest string (low E / string 6). That is G♯2.",
+      "midi": 44,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "note-11-string-5",
+      "prompt": "Play G♯\non the A string",
+      "instruction": "String 5. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 11 on the A string (string 5). That is G♯3.",
+      "midi": 56,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "note-11-string-4",
+      "prompt": "Play G♯\non the D string",
+      "instruction": "String 4. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 6 on the D string (string 4). That is G♯3.",
+      "midi": 56,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "note-11-string-3",
+      "prompt": "Play G♯\non the G string",
+      "instruction": "String 3. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 1 on the G string (string 3). That is G♯3.",
+      "midi": 56,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "note-11-string-2",
+      "prompt": "Play G♯\non the B string",
+      "instruction": "String 2. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 9 on the B string (string 2). That is G♯4.",
+      "midi": 68,
+      "match": "exact",
+      "string": 2
+    },
+    {
+      "id": "note-11-string-1",
+      "prompt": "Play G♯\non the high E string",
+      "instruction": "String 1. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 4 on the thinnest string (high E / string 1). That is G♯4.",
+      "midi": 68,
+      "match": "exact",
+      "string": 1
+    },
+    {
+      "id": "note-12-string-6",
+      "prompt": "Play A♭\non the low E string",
+      "instruction": "String 6. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 4 on the thickest string (low E / string 6). That is A♭2.",
+      "midi": 44,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "note-12-string-5",
+      "prompt": "Play A♭\non the A string",
+      "instruction": "String 5. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 11 on the A string (string 5). That is A♭3.",
+      "midi": 56,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "note-12-string-4",
+      "prompt": "Play A♭\non the D string",
+      "instruction": "String 4. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 6 on the D string (string 4). That is A♭3.",
+      "midi": 56,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "note-12-string-3",
+      "prompt": "Play A♭\non the G string",
+      "instruction": "String 3. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 1 on the G string (string 3). That is A♭3.",
+      "midi": 56,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "note-12-string-2",
+      "prompt": "Play A♭\non the B string",
+      "instruction": "String 2. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 9 on the B string (string 2). That is A♭4.",
+      "midi": 68,
+      "match": "exact",
+      "string": 2
+    },
+    {
+      "id": "note-12-string-1",
+      "prompt": "Play A♭\non the high E string",
+      "instruction": "String 1. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 4 on the thinnest string (high E / string 1). That is A♭4.",
+      "midi": 68,
+      "match": "exact",
+      "string": 1
+    },
+    {
+      "id": "note-13-string-6",
+      "prompt": "Play A\non the low E string",
+      "instruction": "String 6. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 5 on the thickest string (low E / string 6). That is A2.",
+      "midi": 45,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "note-13-string-5",
+      "prompt": "Play A\non the A string",
+      "instruction": "String 5. One octave above open A.\nDo not use the open string.",
+      "hint": "Press fret 12 on the A string (string 5). That is A3.",
+      "midi": 57,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "note-13-string-4",
+      "prompt": "Play A\non the D string",
+      "instruction": "String 4. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 7 on the D string (string 4). That is A3.",
+      "midi": 57,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "note-13-string-3",
+      "prompt": "Play A\non the G string",
+      "instruction": "String 3. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 2 on the G string (string 3). That is A3.",
+      "midi": 57,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "note-13-string-2",
+      "prompt": "Play A\non the B string",
+      "instruction": "String 2. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 10 on the B string (string 2). That is A4.",
+      "midi": 69,
+      "match": "exact",
+      "string": 2
+    },
+    {
+      "id": "note-13-string-1",
+      "prompt": "Play A\non the high E string",
+      "instruction": "String 1. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 5 on the thinnest string (high E / string 1). That is A4.",
+      "midi": 69,
+      "match": "exact",
+      "string": 1
+    },
+    {
+      "id": "note-14-string-6",
+      "prompt": "Play A♯\non the low E string",
+      "instruction": "String 6. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 6 on the thickest string (low E / string 6). That is A♯2.",
+      "midi": 46,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "note-14-string-5",
+      "prompt": "Play A♯\non the A string",
+      "instruction": "String 5. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 1 on the A string (string 5). That is A♯2.",
+      "midi": 46,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "note-14-string-4",
+      "prompt": "Play A♯\non the D string",
+      "instruction": "String 4. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 8 on the D string (string 4). That is A♯3.",
+      "midi": 58,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "note-14-string-3",
+      "prompt": "Play A♯\non the G string",
+      "instruction": "String 3. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 3 on the G string (string 3). That is A♯3.",
+      "midi": 58,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "note-14-string-2",
+      "prompt": "Play A♯\non the B string",
+      "instruction": "String 2. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 11 on the B string (string 2). That is A♯4.",
+      "midi": 70,
+      "match": "exact",
+      "string": 2
+    },
+    {
+      "id": "note-14-string-1",
+      "prompt": "Play A♯\non the high E string",
+      "instruction": "String 1. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 6 on the thinnest string (high E / string 1). That is A♯4.",
+      "midi": 70,
+      "match": "exact",
+      "string": 1
+    },
+    {
+      "id": "note-15-string-6",
+      "prompt": "Play B♭\non the low E string",
+      "instruction": "String 6. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 6 on the thickest string (low E / string 6). That is B♭2.",
+      "midi": 46,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "note-15-string-5",
+      "prompt": "Play B♭\non the A string",
+      "instruction": "String 5. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 1 on the A string (string 5). That is B♭2.",
+      "midi": 46,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "note-15-string-4",
+      "prompt": "Play B♭\non the D string",
+      "instruction": "String 4. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 8 on the D string (string 4). That is B♭3.",
+      "midi": 58,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "note-15-string-3",
+      "prompt": "Play B♭\non the G string",
+      "instruction": "String 3. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 3 on the G string (string 3). That is B♭3.",
+      "midi": 58,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "note-15-string-2",
+      "prompt": "Play B♭\non the B string",
+      "instruction": "String 2. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 11 on the B string (string 2). That is B♭4.",
+      "midi": 70,
+      "match": "exact",
+      "string": 2
+    },
+    {
+      "id": "note-15-string-1",
+      "prompt": "Play B♭\non the high E string",
+      "instruction": "String 1. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 6 on the thinnest string (high E / string 1). That is B♭4.",
+      "midi": 70,
+      "match": "exact",
+      "string": 1
+    },
+    {
+      "id": "note-16-string-6",
+      "prompt": "Play B\non the low E string",
+      "instruction": "String 6. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 7 on the thickest string (low E / string 6). That is B2.",
+      "midi": 47,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "note-16-string-5",
+      "prompt": "Play B\non the A string",
+      "instruction": "String 5. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 2 on the A string (string 5). That is B2.",
+      "midi": 47,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "note-16-string-4",
+      "prompt": "Play B\non the D string",
+      "instruction": "String 4. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 9 on the D string (string 4). That is B3.",
+      "midi": 59,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "note-16-string-3",
+      "prompt": "Play B\non the G string",
+      "instruction": "String 3. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 4 on the G string (string 3). That is B3.",
+      "midi": 59,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "note-16-string-2",
+      "prompt": "Play B\non the B string",
+      "instruction": "String 2. One octave above open B.\nDo not use the open string.",
+      "hint": "Press fret 12 on the B string (string 2). That is B4.",
+      "midi": 71,
+      "match": "exact",
+      "string": 2
+    },
+    {
+      "id": "note-16-string-1",
+      "prompt": "Play B\non the high E string",
+      "instruction": "String 1. Find it between frets 1–12.\nDo not use the open string.",
+      "hint": "Press fret 7 on the thinnest string (high E / string 1). That is B4.",
+      "midi": 71,
+      "match": "exact",
+      "string": 1
+    }
+  ]
+}

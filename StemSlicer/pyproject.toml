@@ -1,0 +1,21 @@
+[project]
+name = "demucs-tools"
+version = "0.1.0"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "demucs==4.1.0",
+    "numpy>=2.4.6",
+    "torch>=2.1",
+]
+
+[tool.uv]
+environments = ["sys_platform == 'win32' and platform_machine == 'AMD64'"]
+
+[tool.uv.sources]
+torch = { index = "pytorch" }
+
+[[tool.uv.index]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
+

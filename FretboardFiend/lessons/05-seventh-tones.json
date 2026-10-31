@@ -1,0 +1,2600 @@
+{
+  "version": 1,
+  "id": "seventh-tones-v1",
+  "title": "Seventh tones · all roots",
+  "description": "Find a chord tone in a seventh chord. Pick one note, not a strum.",
+  "cards": [
+    {
+      "id": "root-0-maj7-string-6",
+      "prompt": "Play the perfect fifth\nof Cmaj7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is G2. Press fret 3 on the low E string with your middle finger.",
+      "midi": 43,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-0-maj7-string-5",
+      "prompt": "Play the root\nof Cmaj7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is C3. Press fret 3 on the A string with your ring finger.",
+      "midi": 48,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-0-maj7-string-4",
+      "prompt": "Play the major third\nof Cmaj7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major third is E3. Press fret 2 on the D string with your index finger.",
+      "midi": 52,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-0-maj7-string-3",
+      "prompt": "Play the major seventh\nof Cmaj7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major seventh is B3. Press fret 4 on the G string with your pinky finger.",
+      "midi": 59,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-0-dom7-string-6",
+      "prompt": "Play the perfect fifth\nof C7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is G2. Press fret 3 on the low E string with your middle finger.",
+      "midi": 43,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-0-dom7-string-5",
+      "prompt": "Play the root\nof C7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is C3. Press fret 3 on the A string with your ring finger.",
+      "midi": 48,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-0-dom7-string-4",
+      "prompt": "Play the major third\nof C7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major third is E3. Press fret 2 on the D string with your index finger.",
+      "midi": 52,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-0-dom7-string-3",
+      "prompt": "Play the minor seventh\nof C7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is B♭3. Press fret 3 on the G string with your pinky finger.",
+      "midi": 58,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-0-min7-string-6",
+      "prompt": "Play the perfect fifth\nof Cm7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is G2. Press fret 3 on the low E string with your middle finger.",
+      "midi": 43,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-0-min7-string-5",
+      "prompt": "Play the root\nof Cm7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is C3. Press fret 3 on the A string with your ring finger.",
+      "midi": 48,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-0-min7-string-4",
+      "prompt": "Play the minor third\nof Cm7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is E♭3. Press fret 1 on the D string with your index finger.",
+      "midi": 51,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-0-min7-string-3",
+      "prompt": "Play the minor seventh\nof Cm7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is B♭3. Press fret 3 on the G string with your pinky finger.",
+      "midi": 58,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-0-half_dim-string-6",
+      "prompt": "Play the diminished fifth\nof Cm7♭5",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished fifth is G♭2. Press fret 2 on the low E string with your middle finger.",
+      "midi": 42,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-0-half_dim-string-5",
+      "prompt": "Play the root\nof Cm7♭5",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is C3. Press fret 3 on the A string with your ring finger.",
+      "midi": 48,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-0-half_dim-string-4",
+      "prompt": "Play the minor third\nof Cm7♭5",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is E♭3. Press fret 1 on the D string with your index finger.",
+      "midi": 51,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-0-half_dim-string-3",
+      "prompt": "Play the minor seventh\nof Cm7♭5",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is B♭3. Press fret 3 on the G string with your pinky finger.",
+      "midi": 58,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-0-dim7-string-6",
+      "prompt": "Play the diminished fifth\nof Cdim7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished fifth is G♭2. Press fret 2 on the low E string with your middle finger.",
+      "midi": 42,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-0-dim7-string-5",
+      "prompt": "Play the root\nof Cdim7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is C3. Press fret 3 on the A string with your ring finger.",
+      "midi": 48,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-0-dim7-string-4",
+      "prompt": "Play the minor third\nof Cdim7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is E♭3. Press fret 1 on the D string with your index finger.",
+      "midi": 51,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-0-dim7-string-3",
+      "prompt": "Play the diminished seventh\nof Cdim7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished seventh is B♭♭3. Press fret 2 on the G string with your pinky finger.",
+      "midi": 57,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-0-min_maj7-string-6",
+      "prompt": "Play the perfect fifth\nof Cm(maj7)",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is G2. Press fret 3 on the low E string with your middle finger.",
+      "midi": 43,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-0-min_maj7-string-5",
+      "prompt": "Play the root\nof Cm(maj7)",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is C3. Press fret 3 on the A string with your ring finger.",
+      "midi": 48,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-0-min_maj7-string-4",
+      "prompt": "Play the minor third\nof Cm(maj7)",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is E♭3. Press fret 1 on the D string with your index finger.",
+      "midi": 51,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-0-min_maj7-string-3",
+      "prompt": "Play the major seventh\nof Cm(maj7)",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major seventh is B3. Press fret 4 on the G string with your pinky finger.",
+      "midi": 59,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-1-maj7-string-6",
+      "prompt": "Play the perfect fifth\nof D♭maj7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is A♭2. Press fret 4 on the low E string with your middle finger.",
+      "midi": 44,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-1-maj7-string-5",
+      "prompt": "Play the root\nof D♭maj7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is D♭3. Press fret 4 on the A string with your ring finger.",
+      "midi": 49,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-1-maj7-string-4",
+      "prompt": "Play the major third\nof D♭maj7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major third is F3. Press fret 3 on the D string with your index finger.",
+      "midi": 53,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-1-maj7-string-3",
+      "prompt": "Play the major seventh\nof D♭maj7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major seventh is C4. Press fret 5 on the G string with your pinky finger.",
+      "midi": 60,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-1-dom7-string-6",
+      "prompt": "Play the perfect fifth\nof D♭7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is A♭2. Press fret 4 on the low E string with your middle finger.",
+      "midi": 44,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-1-dom7-string-5",
+      "prompt": "Play the root\nof D♭7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is D♭3. Press fret 4 on the A string with your ring finger.",
+      "midi": 49,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-1-dom7-string-4",
+      "prompt": "Play the major third\nof D♭7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major third is F3. Press fret 3 on the D string with your index finger.",
+      "midi": 53,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-1-dom7-string-3",
+      "prompt": "Play the minor seventh\nof D♭7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is C♭3. Press fret 4 on the G string with your pinky finger.",
+      "midi": 59,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-1-min7-string-6",
+      "prompt": "Play the perfect fifth\nof D♭m7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is A♭2. Press fret 4 on the low E string with your middle finger.",
+      "midi": 44,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-1-min7-string-5",
+      "prompt": "Play the root\nof D♭m7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is D♭3. Press fret 4 on the A string with your ring finger.",
+      "midi": 49,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-1-min7-string-4",
+      "prompt": "Play the minor third\nof D♭m7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is F♭3. Press fret 2 on the D string with your index finger.",
+      "midi": 52,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-1-min7-string-3",
+      "prompt": "Play the minor seventh\nof D♭m7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is C♭3. Press fret 4 on the G string with your pinky finger.",
+      "midi": 59,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-1-half_dim-string-6",
+      "prompt": "Play the diminished fifth\nof D♭m7♭5",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished fifth is A♭♭2. Press fret 3 on the low E string with your middle finger.",
+      "midi": 43,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-1-half_dim-string-5",
+      "prompt": "Play the root\nof D♭m7♭5",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is D♭3. Press fret 4 on the A string with your ring finger.",
+      "midi": 49,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-1-half_dim-string-4",
+      "prompt": "Play the minor third\nof D♭m7♭5",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is F♭3. Press fret 2 on the D string with your index finger.",
+      "midi": 52,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-1-half_dim-string-3",
+      "prompt": "Play the minor seventh\nof D♭m7♭5",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is C♭3. Press fret 4 on the G string with your pinky finger.",
+      "midi": 59,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-1-dim7-string-6",
+      "prompt": "Play the diminished fifth\nof D♭dim7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished fifth is A♭♭2. Press fret 3 on the low E string with your middle finger.",
+      "midi": 43,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-1-dim7-string-5",
+      "prompt": "Play the root\nof D♭dim7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is D♭3. Press fret 4 on the A string with your ring finger.",
+      "midi": 49,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-1-dim7-string-4",
+      "prompt": "Play the minor third\nof D♭dim7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is F♭3. Press fret 2 on the D string with your index finger.",
+      "midi": 52,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-1-dim7-string-3",
+      "prompt": "Play the diminished seventh\nof D♭dim7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished seventh is C♭♭3. Press fret 3 on the G string with your pinky finger.",
+      "midi": 58,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-1-min_maj7-string-6",
+      "prompt": "Play the perfect fifth\nof D♭m(maj7)",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is A♭2. Press fret 4 on the low E string with your middle finger.",
+      "midi": 44,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-1-min_maj7-string-5",
+      "prompt": "Play the root\nof D♭m(maj7)",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is D♭3. Press fret 4 on the A string with your ring finger.",
+      "midi": 49,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-1-min_maj7-string-4",
+      "prompt": "Play the minor third\nof D♭m(maj7)",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is F♭3. Press fret 2 on the D string with your index finger.",
+      "midi": 52,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-1-min_maj7-string-3",
+      "prompt": "Play the major seventh\nof D♭m(maj7)",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major seventh is C4. Press fret 5 on the G string with your pinky finger.",
+      "midi": 60,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-2-maj7-string-6",
+      "prompt": "Play the perfect fifth\nof Dmaj7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is A2. Press fret 5 on the low E string with your middle finger.",
+      "midi": 45,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-2-maj7-string-5",
+      "prompt": "Play the root\nof Dmaj7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is D3. Press fret 5 on the A string with your ring finger.",
+      "midi": 50,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-2-maj7-string-4",
+      "prompt": "Play the major third\nof Dmaj7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major third is F♯3. Press fret 4 on the D string with your index finger.",
+      "midi": 54,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-2-maj7-string-3",
+      "prompt": "Play the major seventh\nof Dmaj7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major seventh is C♯4. Press fret 6 on the G string with your pinky finger.",
+      "midi": 61,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-2-dom7-string-6",
+      "prompt": "Play the perfect fifth\nof D7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is A2. Press fret 5 on the low E string with your middle finger.",
+      "midi": 45,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-2-dom7-string-5",
+      "prompt": "Play the root\nof D7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is D3. Press fret 5 on the A string with your ring finger.",
+      "midi": 50,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-2-dom7-string-4",
+      "prompt": "Play the major third\nof D7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major third is F♯3. Press fret 4 on the D string with your index finger.",
+      "midi": 54,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-2-dom7-string-3",
+      "prompt": "Play the minor seventh\nof D7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is C4. Press fret 5 on the G string with your pinky finger.",
+      "midi": 60,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-2-min7-string-6",
+      "prompt": "Play the perfect fifth\nof Dm7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is A2. Press fret 5 on the low E string with your middle finger.",
+      "midi": 45,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-2-min7-string-5",
+      "prompt": "Play the root\nof Dm7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is D3. Press fret 5 on the A string with your ring finger.",
+      "midi": 50,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-2-min7-string-4",
+      "prompt": "Play the minor third\nof Dm7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is F3. Press fret 3 on the D string with your index finger.",
+      "midi": 53,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-2-min7-string-3",
+      "prompt": "Play the minor seventh\nof Dm7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is C4. Press fret 5 on the G string with your pinky finger.",
+      "midi": 60,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-2-half_dim-string-6",
+      "prompt": "Play the diminished fifth\nof Dm7♭5",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished fifth is A♭2. Press fret 4 on the low E string with your middle finger.",
+      "midi": 44,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-2-half_dim-string-5",
+      "prompt": "Play the root\nof Dm7♭5",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is D3. Press fret 5 on the A string with your ring finger.",
+      "midi": 50,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-2-half_dim-string-4",
+      "prompt": "Play the minor third\nof Dm7♭5",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is F3. Press fret 3 on the D string with your index finger.",
+      "midi": 53,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-2-half_dim-string-3",
+      "prompt": "Play the minor seventh\nof Dm7♭5",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is C4. Press fret 5 on the G string with your pinky finger.",
+      "midi": 60,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-2-dim7-string-6",
+      "prompt": "Play the diminished fifth\nof Ddim7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished fifth is A♭2. Press fret 4 on the low E string with your middle finger.",
+      "midi": 44,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-2-dim7-string-5",
+      "prompt": "Play the root\nof Ddim7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is D3. Press fret 5 on the A string with your ring finger.",
+      "midi": 50,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-2-dim7-string-4",
+      "prompt": "Play the minor third\nof Ddim7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is F3. Press fret 3 on the D string with your index finger.",
+      "midi": 53,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-2-dim7-string-3",
+      "prompt": "Play the diminished seventh\nof Ddim7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished seventh is C♭3. Press fret 4 on the G string with your pinky finger.",
+      "midi": 59,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-2-min_maj7-string-6",
+      "prompt": "Play the perfect fifth\nof Dm(maj7)",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is A2. Press fret 5 on the low E string with your middle finger.",
+      "midi": 45,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-2-min_maj7-string-5",
+      "prompt": "Play the root\nof Dm(maj7)",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is D3. Press fret 5 on the A string with your ring finger.",
+      "midi": 50,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-2-min_maj7-string-4",
+      "prompt": "Play the minor third\nof Dm(maj7)",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is F3. Press fret 3 on the D string with your index finger.",
+      "midi": 53,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-2-min_maj7-string-3",
+      "prompt": "Play the major seventh\nof Dm(maj7)",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major seventh is C♯4. Press fret 6 on the G string with your pinky finger.",
+      "midi": 61,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-3-maj7-string-6",
+      "prompt": "Play the perfect fifth\nof E♭maj7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is B♭2. Press fret 6 on the low E string with your middle finger.",
+      "midi": 46,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-3-maj7-string-5",
+      "prompt": "Play the root\nof E♭maj7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is E♭3. Press fret 6 on the A string with your ring finger.",
+      "midi": 51,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-3-maj7-string-4",
+      "prompt": "Play the major third\nof E♭maj7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major third is G3. Press fret 5 on the D string with your index finger.",
+      "midi": 55,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-3-maj7-string-3",
+      "prompt": "Play the major seventh\nof E♭maj7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major seventh is D4. Press fret 7 on the G string with your pinky finger.",
+      "midi": 62,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-3-dom7-string-6",
+      "prompt": "Play the perfect fifth\nof E♭7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is B♭2. Press fret 6 on the low E string with your middle finger.",
+      "midi": 46,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-3-dom7-string-5",
+      "prompt": "Play the root\nof E♭7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is E♭3. Press fret 6 on the A string with your ring finger.",
+      "midi": 51,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-3-dom7-string-4",
+      "prompt": "Play the major third\nof E♭7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major third is G3. Press fret 5 on the D string with your index finger.",
+      "midi": 55,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-3-dom7-string-3",
+      "prompt": "Play the minor seventh\nof E♭7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is D♭4. Press fret 6 on the G string with your pinky finger.",
+      "midi": 61,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-3-min7-string-6",
+      "prompt": "Play the perfect fifth\nof E♭m7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is B♭2. Press fret 6 on the low E string with your middle finger.",
+      "midi": 46,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-3-min7-string-5",
+      "prompt": "Play the root\nof E♭m7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is E♭3. Press fret 6 on the A string with your ring finger.",
+      "midi": 51,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-3-min7-string-4",
+      "prompt": "Play the minor third\nof E♭m7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is G♭3. Press fret 4 on the D string with your index finger.",
+      "midi": 54,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-3-min7-string-3",
+      "prompt": "Play the minor seventh\nof E♭m7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is D♭4. Press fret 6 on the G string with your pinky finger.",
+      "midi": 61,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-3-half_dim-string-6",
+      "prompt": "Play the diminished fifth\nof E♭m7♭5",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished fifth is B♭♭2. Press fret 5 on the low E string with your middle finger.",
+      "midi": 45,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-3-half_dim-string-5",
+      "prompt": "Play the root\nof E♭m7♭5",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is E♭3. Press fret 6 on the A string with your ring finger.",
+      "midi": 51,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-3-half_dim-string-4",
+      "prompt": "Play the minor third\nof E♭m7♭5",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is G♭3. Press fret 4 on the D string with your index finger.",
+      "midi": 54,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-3-half_dim-string-3",
+      "prompt": "Play the minor seventh\nof E♭m7♭5",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is D♭4. Press fret 6 on the G string with your pinky finger.",
+      "midi": 61,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-3-dim7-string-6",
+      "prompt": "Play the diminished fifth\nof E♭dim7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished fifth is B♭♭2. Press fret 5 on the low E string with your middle finger.",
+      "midi": 45,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-3-dim7-string-5",
+      "prompt": "Play the root\nof E♭dim7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is E♭3. Press fret 6 on the A string with your ring finger.",
+      "midi": 51,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-3-dim7-string-4",
+      "prompt": "Play the minor third\nof E♭dim7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is G♭3. Press fret 4 on the D string with your index finger.",
+      "midi": 54,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-3-dim7-string-3",
+      "prompt": "Play the diminished seventh\nof E♭dim7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished seventh is D♭♭4. Press fret 5 on the G string with your pinky finger.",
+      "midi": 60,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-3-min_maj7-string-6",
+      "prompt": "Play the perfect fifth\nof E♭m(maj7)",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is B♭2. Press fret 6 on the low E string with your middle finger.",
+      "midi": 46,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-3-min_maj7-string-5",
+      "prompt": "Play the root\nof E♭m(maj7)",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is E♭3. Press fret 6 on the A string with your ring finger.",
+      "midi": 51,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-3-min_maj7-string-4",
+      "prompt": "Play the minor third\nof E♭m(maj7)",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is G♭3. Press fret 4 on the D string with your index finger.",
+      "midi": 54,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-3-min_maj7-string-3",
+      "prompt": "Play the major seventh\nof E♭m(maj7)",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major seventh is D4. Press fret 7 on the G string with your pinky finger.",
+      "midi": 62,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-4-maj7-string-6",
+      "prompt": "Play the perfect fifth\nof Emaj7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is B2. Press fret 7 on the low E string with your middle finger.",
+      "midi": 47,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-4-maj7-string-5",
+      "prompt": "Play the root\nof Emaj7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is E3. Press fret 7 on the A string with your ring finger.",
+      "midi": 52,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-4-maj7-string-4",
+      "prompt": "Play the major third\nof Emaj7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major third is G♯3. Press fret 6 on the D string with your index finger.",
+      "midi": 56,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-4-maj7-string-3",
+      "prompt": "Play the major seventh\nof Emaj7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major seventh is D♯4. Press fret 8 on the G string with your pinky finger.",
+      "midi": 63,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-4-dom7-string-6",
+      "prompt": "Play the perfect fifth\nof E7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is B2. Press fret 7 on the low E string with your middle finger.",
+      "midi": 47,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-4-dom7-string-5",
+      "prompt": "Play the root\nof E7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is E3. Press fret 7 on the A string with your ring finger.",
+      "midi": 52,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-4-dom7-string-4",
+      "prompt": "Play the major third\nof E7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major third is G♯3. Press fret 6 on the D string with your index finger.",
+      "midi": 56,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-4-dom7-string-3",
+      "prompt": "Play the minor seventh\nof E7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is D4. Press fret 7 on the G string with your pinky finger.",
+      "midi": 62,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-4-min7-string-6",
+      "prompt": "Play the perfect fifth\nof Em7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is B2. Press fret 7 on the low E string with your middle finger.",
+      "midi": 47,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-4-min7-string-5",
+      "prompt": "Play the root\nof Em7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is E3. Press fret 7 on the A string with your ring finger.",
+      "midi": 52,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-4-min7-string-4",
+      "prompt": "Play the minor third\nof Em7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is G3. Press fret 5 on the D string with your index finger.",
+      "midi": 55,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-4-min7-string-3",
+      "prompt": "Play the minor seventh\nof Em7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is D4. Press fret 7 on the G string with your pinky finger.",
+      "midi": 62,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-4-half_dim-string-6",
+      "prompt": "Play the diminished fifth\nof Em7♭5",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished fifth is B♭2. Press fret 6 on the low E string with your middle finger.",
+      "midi": 46,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-4-half_dim-string-5",
+      "prompt": "Play the root\nof Em7♭5",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is E3. Press fret 7 on the A string with your ring finger.",
+      "midi": 52,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-4-half_dim-string-4",
+      "prompt": "Play the minor third\nof Em7♭5",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is G3. Press fret 5 on the D string with your index finger.",
+      "midi": 55,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-4-half_dim-string-3",
+      "prompt": "Play the minor seventh\nof Em7♭5",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is D4. Press fret 7 on the G string with your pinky finger.",
+      "midi": 62,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-4-dim7-string-6",
+      "prompt": "Play the diminished fifth\nof Edim7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished fifth is B♭2. Press fret 6 on the low E string with your middle finger.",
+      "midi": 46,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-4-dim7-string-5",
+      "prompt": "Play the root\nof Edim7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is E3. Press fret 7 on the A string with your ring finger.",
+      "midi": 52,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-4-dim7-string-4",
+      "prompt": "Play the minor third\nof Edim7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is G3. Press fret 5 on the D string with your index finger.",
+      "midi": 55,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-4-dim7-string-3",
+      "prompt": "Play the diminished seventh\nof Edim7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished seventh is D♭4. Press fret 6 on the G string with your pinky finger.",
+      "midi": 61,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-4-min_maj7-string-6",
+      "prompt": "Play the perfect fifth\nof Em(maj7)",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is B2. Press fret 7 on the low E string with your middle finger.",
+      "midi": 47,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-4-min_maj7-string-5",
+      "prompt": "Play the root\nof Em(maj7)",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is E3. Press fret 7 on the A string with your ring finger.",
+      "midi": 52,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-4-min_maj7-string-4",
+      "prompt": "Play the minor third\nof Em(maj7)",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is G3. Press fret 5 on the D string with your index finger.",
+      "midi": 55,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-4-min_maj7-string-3",
+      "prompt": "Play the major seventh\nof Em(maj7)",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major seventh is D♯4. Press fret 8 on the G string with your pinky finger.",
+      "midi": 63,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-5-maj7-string-6",
+      "prompt": "Play the perfect fifth\nof Fmaj7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is C3. Press fret 8 on the low E string with your middle finger.",
+      "midi": 48,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-5-maj7-string-5",
+      "prompt": "Play the root\nof Fmaj7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is F3. Press fret 8 on the A string with your ring finger.",
+      "midi": 53,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-5-maj7-string-4",
+      "prompt": "Play the major third\nof Fmaj7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major third is A3. Press fret 7 on the D string with your index finger.",
+      "midi": 57,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-5-maj7-string-3",
+      "prompt": "Play the major seventh\nof Fmaj7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major seventh is E4. Press fret 9 on the G string with your pinky finger.",
+      "midi": 64,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-5-dom7-string-6",
+      "prompt": "Play the perfect fifth\nof F7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is C3. Press fret 8 on the low E string with your middle finger.",
+      "midi": 48,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-5-dom7-string-5",
+      "prompt": "Play the root\nof F7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is F3. Press fret 8 on the A string with your ring finger.",
+      "midi": 53,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-5-dom7-string-4",
+      "prompt": "Play the major third\nof F7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major third is A3. Press fret 7 on the D string with your index finger.",
+      "midi": 57,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-5-dom7-string-3",
+      "prompt": "Play the minor seventh\nof F7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is E♭4. Press fret 8 on the G string with your pinky finger.",
+      "midi": 63,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-5-min7-string-6",
+      "prompt": "Play the perfect fifth\nof Fm7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is C3. Press fret 8 on the low E string with your middle finger.",
+      "midi": 48,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-5-min7-string-5",
+      "prompt": "Play the root\nof Fm7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is F3. Press fret 8 on the A string with your ring finger.",
+      "midi": 53,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-5-min7-string-4",
+      "prompt": "Play the minor third\nof Fm7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is A♭3. Press fret 6 on the D string with your index finger.",
+      "midi": 56,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-5-min7-string-3",
+      "prompt": "Play the minor seventh\nof Fm7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is E♭4. Press fret 8 on the G string with your pinky finger.",
+      "midi": 63,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-5-half_dim-string-6",
+      "prompt": "Play the diminished fifth\nof Fm7♭5",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished fifth is C♭2. Press fret 7 on the low E string with your middle finger.",
+      "midi": 47,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-5-half_dim-string-5",
+      "prompt": "Play the root\nof Fm7♭5",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is F3. Press fret 8 on the A string with your ring finger.",
+      "midi": 53,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-5-half_dim-string-4",
+      "prompt": "Play the minor third\nof Fm7♭5",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is A♭3. Press fret 6 on the D string with your index finger.",
+      "midi": 56,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-5-half_dim-string-3",
+      "prompt": "Play the minor seventh\nof Fm7♭5",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is E♭4. Press fret 8 on the G string with your pinky finger.",
+      "midi": 63,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-5-dim7-string-6",
+      "prompt": "Play the diminished fifth\nof Fdim7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished fifth is C♭2. Press fret 7 on the low E string with your middle finger.",
+      "midi": 47,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-5-dim7-string-5",
+      "prompt": "Play the root\nof Fdim7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is F3. Press fret 8 on the A string with your ring finger.",
+      "midi": 53,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-5-dim7-string-4",
+      "prompt": "Play the minor third\nof Fdim7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is A♭3. Press fret 6 on the D string with your index finger.",
+      "midi": 56,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-5-dim7-string-3",
+      "prompt": "Play the diminished seventh\nof Fdim7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished seventh is E♭♭4. Press fret 7 on the G string with your pinky finger.",
+      "midi": 62,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-5-min_maj7-string-6",
+      "prompt": "Play the perfect fifth\nof Fm(maj7)",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is C3. Press fret 8 on the low E string with your middle finger.",
+      "midi": 48,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-5-min_maj7-string-5",
+      "prompt": "Play the root\nof Fm(maj7)",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is F3. Press fret 8 on the A string with your ring finger.",
+      "midi": 53,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-5-min_maj7-string-4",
+      "prompt": "Play the minor third\nof Fm(maj7)",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is A♭3. Press fret 6 on the D string with your index finger.",
+      "midi": 56,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-5-min_maj7-string-3",
+      "prompt": "Play the major seventh\nof Fm(maj7)",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major seventh is E4. Press fret 9 on the G string with your pinky finger.",
+      "midi": 64,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-6-maj7-string-6",
+      "prompt": "Play the perfect fifth\nof G♭maj7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is D♭3. Press fret 9 on the low E string with your middle finger.",
+      "midi": 49,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-6-maj7-string-5",
+      "prompt": "Play the root\nof G♭maj7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is G♭3. Press fret 9 on the A string with your ring finger.",
+      "midi": 54,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-6-maj7-string-4",
+      "prompt": "Play the major third\nof G♭maj7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major third is B♭3. Press fret 8 on the D string with your index finger.",
+      "midi": 58,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-6-maj7-string-3",
+      "prompt": "Play the major seventh\nof G♭maj7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major seventh is F4. Press fret 10 on the G string with your pinky finger.",
+      "midi": 65,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-6-dom7-string-6",
+      "prompt": "Play the perfect fifth\nof G♭7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is D♭3. Press fret 9 on the low E string with your middle finger.",
+      "midi": 49,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-6-dom7-string-5",
+      "prompt": "Play the root\nof G♭7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is G♭3. Press fret 9 on the A string with your ring finger.",
+      "midi": 54,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-6-dom7-string-4",
+      "prompt": "Play the major third\nof G♭7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major third is B♭3. Press fret 8 on the D string with your index finger.",
+      "midi": 58,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-6-dom7-string-3",
+      "prompt": "Play the minor seventh\nof G♭7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is F♭4. Press fret 9 on the G string with your pinky finger.",
+      "midi": 64,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-6-min7-string-6",
+      "prompt": "Play the perfect fifth\nof G♭m7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is D♭3. Press fret 9 on the low E string with your middle finger.",
+      "midi": 49,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-6-min7-string-5",
+      "prompt": "Play the root\nof G♭m7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is G♭3. Press fret 9 on the A string with your ring finger.",
+      "midi": 54,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-6-min7-string-4",
+      "prompt": "Play the minor third\nof G♭m7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is B♭♭3. Press fret 7 on the D string with your index finger.",
+      "midi": 57,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-6-min7-string-3",
+      "prompt": "Play the minor seventh\nof G♭m7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is F♭4. Press fret 9 on the G string with your pinky finger.",
+      "midi": 64,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-6-half_dim-string-6",
+      "prompt": "Play the diminished fifth\nof G♭m7♭5",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished fifth is D♭♭3. Press fret 8 on the low E string with your middle finger.",
+      "midi": 48,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-6-half_dim-string-5",
+      "prompt": "Play the root\nof G♭m7♭5",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is G♭3. Press fret 9 on the A string with your ring finger.",
+      "midi": 54,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-6-half_dim-string-4",
+      "prompt": "Play the minor third\nof G♭m7♭5",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is B♭♭3. Press fret 7 on the D string with your index finger.",
+      "midi": 57,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-6-half_dim-string-3",
+      "prompt": "Play the minor seventh\nof G♭m7♭5",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is F♭4. Press fret 9 on the G string with your pinky finger.",
+      "midi": 64,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-6-dim7-string-6",
+      "prompt": "Play the diminished fifth\nof G♭dim7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished fifth is D♭♭3. Press fret 8 on the low E string with your middle finger.",
+      "midi": 48,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-6-dim7-string-5",
+      "prompt": "Play the root\nof G♭dim7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is G♭3. Press fret 9 on the A string with your ring finger.",
+      "midi": 54,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-6-dim7-string-4",
+      "prompt": "Play the minor third\nof G♭dim7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is B♭♭3. Press fret 7 on the D string with your index finger.",
+      "midi": 57,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-6-dim7-string-3",
+      "prompt": "Play the diminished seventh\nof G♭dim7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished seventh is F♭♭4. Press fret 8 on the G string with your pinky finger.",
+      "midi": 63,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-6-min_maj7-string-6",
+      "prompt": "Play the perfect fifth\nof G♭m(maj7)",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is D♭3. Press fret 9 on the low E string with your middle finger.",
+      "midi": 49,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-6-min_maj7-string-5",
+      "prompt": "Play the root\nof G♭m(maj7)",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is G♭3. Press fret 9 on the A string with your ring finger.",
+      "midi": 54,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-6-min_maj7-string-4",
+      "prompt": "Play the minor third\nof G♭m(maj7)",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is B♭♭3. Press fret 7 on the D string with your index finger.",
+      "midi": 57,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-6-min_maj7-string-3",
+      "prompt": "Play the major seventh\nof G♭m(maj7)",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major seventh is F4. Press fret 10 on the G string with your pinky finger.",
+      "midi": 65,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-7-maj7-string-6",
+      "prompt": "Play the perfect fifth\nof Gmaj7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is D3. Press fret 10 on the low E string with your middle finger.",
+      "midi": 50,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-7-maj7-string-5",
+      "prompt": "Play the root\nof Gmaj7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is G3. Press fret 10 on the A string with your ring finger.",
+      "midi": 55,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-7-maj7-string-4",
+      "prompt": "Play the major third\nof Gmaj7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major third is B3. Press fret 9 on the D string with your index finger.",
+      "midi": 59,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-7-maj7-string-3",
+      "prompt": "Play the major seventh\nof Gmaj7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major seventh is F♯4. Press fret 11 on the G string with your pinky finger.",
+      "midi": 66,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-7-dom7-string-6",
+      "prompt": "Play the perfect fifth\nof G7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is D3. Press fret 10 on the low E string with your middle finger.",
+      "midi": 50,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-7-dom7-string-5",
+      "prompt": "Play the root\nof G7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is G3. Press fret 10 on the A string with your ring finger.",
+      "midi": 55,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-7-dom7-string-4",
+      "prompt": "Play the major third\nof G7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major third is B3. Press fret 9 on the D string with your index finger.",
+      "midi": 59,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-7-dom7-string-3",
+      "prompt": "Play the minor seventh\nof G7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is F4. Press fret 10 on the G string with your pinky finger.",
+      "midi": 65,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-7-min7-string-6",
+      "prompt": "Play the perfect fifth\nof Gm7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is D3. Press fret 10 on the low E string with your middle finger.",
+      "midi": 50,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-7-min7-string-5",
+      "prompt": "Play the root\nof Gm7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is G3. Press fret 10 on the A string with your ring finger.",
+      "midi": 55,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-7-min7-string-4",
+      "prompt": "Play the minor third\nof Gm7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is B♭3. Press fret 8 on the D string with your index finger.",
+      "midi": 58,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-7-min7-string-3",
+      "prompt": "Play the minor seventh\nof Gm7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is F4. Press fret 10 on the G string with your pinky finger.",
+      "midi": 65,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-7-half_dim-string-6",
+      "prompt": "Play the diminished fifth\nof Gm7♭5",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished fifth is D♭3. Press fret 9 on the low E string with your middle finger.",
+      "midi": 49,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-7-half_dim-string-5",
+      "prompt": "Play the root\nof Gm7♭5",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is G3. Press fret 10 on the A string with your ring finger.",
+      "midi": 55,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-7-half_dim-string-4",
+      "prompt": "Play the minor third\nof Gm7♭5",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is B♭3. Press fret 8 on the D string with your index finger.",
+      "midi": 58,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-7-half_dim-string-3",
+      "prompt": "Play the minor seventh\nof Gm7♭5",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is F4. Press fret 10 on the G string with your pinky finger.",
+      "midi": 65,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-7-dim7-string-6",
+      "prompt": "Play the diminished fifth\nof Gdim7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished fifth is D♭3. Press fret 9 on the low E string with your middle finger.",
+      "midi": 49,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-7-dim7-string-5",
+      "prompt": "Play the root\nof Gdim7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is G3. Press fret 10 on the A string with your ring finger.",
+      "midi": 55,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-7-dim7-string-4",
+      "prompt": "Play the minor third\nof Gdim7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is B♭3. Press fret 8 on the D string with your index finger.",
+      "midi": 58,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-7-dim7-string-3",
+      "prompt": "Play the diminished seventh\nof Gdim7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished seventh is F♭4. Press fret 9 on the G string with your pinky finger.",
+      "midi": 64,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-7-min_maj7-string-6",
+      "prompt": "Play the perfect fifth\nof Gm(maj7)",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is D3. Press fret 10 on the low E string with your middle finger.",
+      "midi": 50,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-7-min_maj7-string-5",
+      "prompt": "Play the root\nof Gm(maj7)",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is G3. Press fret 10 on the A string with your ring finger.",
+      "midi": 55,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-7-min_maj7-string-4",
+      "prompt": "Play the minor third\nof Gm(maj7)",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is B♭3. Press fret 8 on the D string with your index finger.",
+      "midi": 58,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-7-min_maj7-string-3",
+      "prompt": "Play the major seventh\nof Gm(maj7)",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major seventh is F♯4. Press fret 11 on the G string with your pinky finger.",
+      "midi": 66,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-8-maj7-string-6",
+      "prompt": "Play the perfect fifth\nof A♭maj7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is E♭3. Press fret 11 on the low E string with your middle finger.",
+      "midi": 51,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-8-maj7-string-5",
+      "prompt": "Play the root\nof A♭maj7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is A♭3. Press fret 11 on the A string with your ring finger.",
+      "midi": 56,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-8-maj7-string-4",
+      "prompt": "Play the major third\nof A♭maj7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major third is C4. Press fret 10 on the D string with your index finger.",
+      "midi": 60,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-8-maj7-string-3",
+      "prompt": "Play the major seventh\nof A♭maj7",
+      "instruction": "Use the G string (string 3).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The major seventh is G4. Press fret 12 on the G string with your pinky finger.",
+      "midi": 67,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-8-dom7-string-6",
+      "prompt": "Play the perfect fifth\nof A♭7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is E♭3. Press fret 11 on the low E string with your middle finger.",
+      "midi": 51,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-8-dom7-string-5",
+      "prompt": "Play the root\nof A♭7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is A♭3. Press fret 11 on the A string with your ring finger.",
+      "midi": 56,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-8-dom7-string-4",
+      "prompt": "Play the major third\nof A♭7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major third is C4. Press fret 10 on the D string with your index finger.",
+      "midi": 60,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-8-dom7-string-3",
+      "prompt": "Play the minor seventh\nof A♭7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is G♭4. Press fret 11 on the G string with your pinky finger.",
+      "midi": 66,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-8-min7-string-6",
+      "prompt": "Play the perfect fifth\nof A♭m7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is E♭3. Press fret 11 on the low E string with your middle finger.",
+      "midi": 51,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-8-min7-string-5",
+      "prompt": "Play the root\nof A♭m7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is A♭3. Press fret 11 on the A string with your ring finger.",
+      "midi": 56,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-8-min7-string-4",
+      "prompt": "Play the minor third\nof A♭m7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is C♭3. Press fret 9 on the D string with your index finger.",
+      "midi": 59,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-8-min7-string-3",
+      "prompt": "Play the minor seventh\nof A♭m7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is G♭4. Press fret 11 on the G string with your pinky finger.",
+      "midi": 66,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-8-half_dim-string-6",
+      "prompt": "Play the diminished fifth\nof A♭m7♭5",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished fifth is E♭♭3. Press fret 10 on the low E string with your middle finger.",
+      "midi": 50,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-8-half_dim-string-5",
+      "prompt": "Play the root\nof A♭m7♭5",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is A♭3. Press fret 11 on the A string with your ring finger.",
+      "midi": 56,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-8-half_dim-string-4",
+      "prompt": "Play the minor third\nof A♭m7♭5",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is C♭3. Press fret 9 on the D string with your index finger.",
+      "midi": 59,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-8-half_dim-string-3",
+      "prompt": "Play the minor seventh\nof A♭m7♭5",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor seventh is G♭4. Press fret 11 on the G string with your pinky finger.",
+      "midi": 66,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-8-dim7-string-6",
+      "prompt": "Play the diminished fifth\nof A♭dim7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished fifth is E♭♭3. Press fret 10 on the low E string with your middle finger.",
+      "midi": 50,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-8-dim7-string-5",
+      "prompt": "Play the root\nof A♭dim7",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is A♭3. Press fret 11 on the A string with your ring finger.",
+      "midi": 56,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-8-dim7-string-4",
+      "prompt": "Play the minor third\nof A♭dim7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is C♭3. Press fret 9 on the D string with your index finger.",
+      "midi": 59,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-8-dim7-string-3",
+      "prompt": "Play the diminished seventh\nof A♭dim7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished seventh is G♭♭4. Press fret 10 on the G string with your pinky finger.",
+      "midi": 65,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-8-min_maj7-string-6",
+      "prompt": "Play the perfect fifth\nof A♭m(maj7)",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The perfect fifth is E♭3. Press fret 11 on the low E string with your middle finger.",
+      "midi": 51,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-8-min_maj7-string-5",
+      "prompt": "Play the root\nof A♭m(maj7)",
+      "instruction": "Use the A string (string 5).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The root is A♭3. Press fret 11 on the A string with your ring finger.",
+      "midi": 56,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-8-min_maj7-string-4",
+      "prompt": "Play the minor third\nof A♭m(maj7)",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is C♭3. Press fret 9 on the D string with your index finger.",
+      "midi": 59,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-8-min_maj7-string-3",
+      "prompt": "Play the major seventh\nof A♭m(maj7)",
+      "instruction": "Use the G string (string 3).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The major seventh is G4. Press fret 12 on the G string with your pinky finger.",
+      "midi": 67,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-9-maj7-string-6",
+      "prompt": "Play the perfect fifth\nof Amaj7",
+      "instruction": "Use the thickest string (low E / string 6).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The perfect fifth is E3. Press fret 12 on the low E string with your middle finger.",
+      "midi": 52,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-9-maj7-string-5",
+      "prompt": "Play the root\nof Amaj7",
+      "instruction": "Use the A string (string 5).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The root is A3. Press fret 12 on the A string with your ring finger.",
+      "midi": 57,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-9-maj7-string-4",
+      "prompt": "Play the major third\nof Amaj7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major third is C♯4. Press fret 11 on the D string with your index finger.",
+      "midi": 61,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-9-maj7-string-3",
+      "prompt": "Play the major seventh\nof Amaj7",
+      "instruction": "Use the G string (string 3).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The major seventh is G♯4. Press fret 13 on the G string with your pinky finger.",
+      "midi": 68,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-9-dom7-string-6",
+      "prompt": "Play the perfect fifth\nof A7",
+      "instruction": "Use the thickest string (low E / string 6).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The perfect fifth is E3. Press fret 12 on the low E string with your middle finger.",
+      "midi": 52,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-9-dom7-string-5",
+      "prompt": "Play the root\nof A7",
+      "instruction": "Use the A string (string 5).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The root is A3. Press fret 12 on the A string with your ring finger.",
+      "midi": 57,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-9-dom7-string-4",
+      "prompt": "Play the major third\nof A7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The major third is C♯4. Press fret 11 on the D string with your index finger.",
+      "midi": 61,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-9-dom7-string-3",
+      "prompt": "Play the minor seventh\nof A7",
+      "instruction": "Use the G string (string 3).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The minor seventh is G4. Press fret 12 on the G string with your pinky finger.",
+      "midi": 67,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-9-min7-string-6",
+      "prompt": "Play the perfect fifth\nof Am7",
+      "instruction": "Use the thickest string (low E / string 6).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The perfect fifth is E3. Press fret 12 on the low E string with your middle finger.",
+      "midi": 52,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-9-min7-string-5",
+      "prompt": "Play the root\nof Am7",
+      "instruction": "Use the A string (string 5).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The root is A3. Press fret 12 on the A string with your ring finger.",
+      "midi": 57,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-9-min7-string-4",
+      "prompt": "Play the minor third\nof Am7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is C4. Press fret 10 on the D string with your index finger.",
+      "midi": 60,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-9-min7-string-3",
+      "prompt": "Play the minor seventh\nof Am7",
+      "instruction": "Use the G string (string 3).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The minor seventh is G4. Press fret 12 on the G string with your pinky finger.",
+      "midi": 67,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-9-half_dim-string-6",
+      "prompt": "Play the diminished fifth\nof Am7♭5",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished fifth is E♭3. Press fret 11 on the low E string with your middle finger.",
+      "midi": 51,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-9-half_dim-string-5",
+      "prompt": "Play the root\nof Am7♭5",
+      "instruction": "Use the A string (string 5).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The root is A3. Press fret 12 on the A string with your ring finger.",
+      "midi": 57,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-9-half_dim-string-4",
+      "prompt": "Play the minor third\nof Am7♭5",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is C4. Press fret 10 on the D string with your index finger.",
+      "midi": 60,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-9-half_dim-string-3",
+      "prompt": "Play the minor seventh\nof Am7♭5",
+      "instruction": "Use the G string (string 3).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The minor seventh is G4. Press fret 12 on the G string with your pinky finger.",
+      "midi": 67,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-9-dim7-string-6",
+      "prompt": "Play the diminished fifth\nof Adim7",
+      "instruction": "Use the thickest string (low E / string 6).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished fifth is E♭3. Press fret 11 on the low E string with your middle finger.",
+      "midi": 51,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-9-dim7-string-5",
+      "prompt": "Play the root\nof Adim7",
+      "instruction": "Use the A string (string 5).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The root is A3. Press fret 12 on the A string with your ring finger.",
+      "midi": 57,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-9-dim7-string-4",
+      "prompt": "Play the minor third\nof Adim7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is C4. Press fret 10 on the D string with your index finger.",
+      "midi": 60,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-9-dim7-string-3",
+      "prompt": "Play the diminished seventh\nof Adim7",
+      "instruction": "Use the G string (string 3).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The diminished seventh is G♭4. Press fret 11 on the G string with your pinky finger.",
+      "midi": 66,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-9-min_maj7-string-6",
+      "prompt": "Play the perfect fifth\nof Am(maj7)",
+      "instruction": "Use the thickest string (low E / string 6).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The perfect fifth is E3. Press fret 12 on the low E string with your middle finger.",
+      "midi": 52,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-9-min_maj7-string-5",
+      "prompt": "Play the root\nof Am(maj7)",
+      "instruction": "Use the A string (string 5).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The root is A3. Press fret 12 on the A string with your ring finger.",
+      "midi": 57,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-9-min_maj7-string-4",
+      "prompt": "Play the minor third\nof Am(maj7)",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is C4. Press fret 10 on the D string with your index finger.",
+      "midi": 60,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-9-min_maj7-string-3",
+      "prompt": "Play the major seventh\nof Am(maj7)",
+      "instruction": "Use the G string (string 3).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The major seventh is G♯4. Press fret 13 on the G string with your pinky finger.",
+      "midi": 68,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-10-maj7-string-6",
+      "prompt": "Play the perfect fifth\nof B♭maj7",
+      "instruction": "Use the thickest string (low E / string 6).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The perfect fifth is F3. Press fret 13 on the low E string with your middle finger.",
+      "midi": 53,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-10-maj7-string-5",
+      "prompt": "Play the root\nof B♭maj7",
+      "instruction": "Use the A string (string 5).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The root is B♭3. Press fret 13 on the A string with your ring finger.",
+      "midi": 58,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-10-maj7-string-4",
+      "prompt": "Play the major third\nof B♭maj7",
+      "instruction": "Use the D string (string 4).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The major third is D4. Press fret 12 on the D string with your index finger.",
+      "midi": 62,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-10-maj7-string-3",
+      "prompt": "Play the major seventh\nof B♭maj7",
+      "instruction": "Use the G string (string 3).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The major seventh is A4. Press fret 14 on the G string with your pinky finger.",
+      "midi": 69,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-10-dom7-string-6",
+      "prompt": "Play the perfect fifth\nof B♭7",
+      "instruction": "Use the thickest string (low E / string 6).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The perfect fifth is F3. Press fret 13 on the low E string with your middle finger.",
+      "midi": 53,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-10-dom7-string-5",
+      "prompt": "Play the root\nof B♭7",
+      "instruction": "Use the A string (string 5).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The root is B♭3. Press fret 13 on the A string with your ring finger.",
+      "midi": 58,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-10-dom7-string-4",
+      "prompt": "Play the major third\nof B♭7",
+      "instruction": "Use the D string (string 4).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The major third is D4. Press fret 12 on the D string with your index finger.",
+      "midi": 62,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-10-dom7-string-3",
+      "prompt": "Play the minor seventh\nof B♭7",
+      "instruction": "Use the G string (string 3).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The minor seventh is A♭4. Press fret 13 on the G string with your pinky finger.",
+      "midi": 68,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-10-min7-string-6",
+      "prompt": "Play the perfect fifth\nof B♭m7",
+      "instruction": "Use the thickest string (low E / string 6).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The perfect fifth is F3. Press fret 13 on the low E string with your middle finger.",
+      "midi": 53,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-10-min7-string-5",
+      "prompt": "Play the root\nof B♭m7",
+      "instruction": "Use the A string (string 5).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The root is B♭3. Press fret 13 on the A string with your ring finger.",
+      "midi": 58,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-10-min7-string-4",
+      "prompt": "Play the minor third\nof B♭m7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is D♭4. Press fret 11 on the D string with your index finger.",
+      "midi": 61,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-10-min7-string-3",
+      "prompt": "Play the minor seventh\nof B♭m7",
+      "instruction": "Use the G string (string 3).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The minor seventh is A♭4. Press fret 13 on the G string with your pinky finger.",
+      "midi": 68,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-10-half_dim-string-6",
+      "prompt": "Play the diminished fifth\nof B♭m7♭5",
+      "instruction": "Use the thickest string (low E / string 6).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The diminished fifth is F♭3. Press fret 12 on the low E string with your middle finger.",
+      "midi": 52,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-10-half_dim-string-5",
+      "prompt": "Play the root\nof B♭m7♭5",
+      "instruction": "Use the A string (string 5).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The root is B♭3. Press fret 13 on the A string with your ring finger.",
+      "midi": 58,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-10-half_dim-string-4",
+      "prompt": "Play the minor third\nof B♭m7♭5",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is D♭4. Press fret 11 on the D string with your index finger.",
+      "midi": 61,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-10-half_dim-string-3",
+      "prompt": "Play the minor seventh\nof B♭m7♭5",
+      "instruction": "Use the G string (string 3).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The minor seventh is A♭4. Press fret 13 on the G string with your pinky finger.",
+      "midi": 68,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-10-dim7-string-6",
+      "prompt": "Play the diminished fifth\nof B♭dim7",
+      "instruction": "Use the thickest string (low E / string 6).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The diminished fifth is F♭3. Press fret 12 on the low E string with your middle finger.",
+      "midi": 52,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-10-dim7-string-5",
+      "prompt": "Play the root\nof B♭dim7",
+      "instruction": "Use the A string (string 5).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The root is B♭3. Press fret 13 on the A string with your ring finger.",
+      "midi": 58,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-10-dim7-string-4",
+      "prompt": "Play the minor third\nof B♭dim7",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is D♭4. Press fret 11 on the D string with your index finger.",
+      "midi": 61,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-10-dim7-string-3",
+      "prompt": "Play the diminished seventh\nof B♭dim7",
+      "instruction": "Use the G string (string 3).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The diminished seventh is A♭♭4. Press fret 12 on the G string with your pinky finger.",
+      "midi": 67,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-10-min_maj7-string-6",
+      "prompt": "Play the perfect fifth\nof B♭m(maj7)",
+      "instruction": "Use the thickest string (low E / string 6).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The perfect fifth is F3. Press fret 13 on the low E string with your middle finger.",
+      "midi": 53,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-10-min_maj7-string-5",
+      "prompt": "Play the root\nof B♭m(maj7)",
+      "instruction": "Use the A string (string 5).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The root is B♭3. Press fret 13 on the A string with your ring finger.",
+      "midi": 58,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-10-min_maj7-string-4",
+      "prompt": "Play the minor third\nof B♭m(maj7)",
+      "instruction": "Use the D string (string 4).\nUse its lowest position on this string (open to fret 11).",
+      "hint": "The minor third is D♭4. Press fret 11 on the D string with your index finger.",
+      "midi": 61,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-10-min_maj7-string-3",
+      "prompt": "Play the major seventh\nof B♭m(maj7)",
+      "instruction": "Use the G string (string 3).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The major seventh is A4. Press fret 14 on the G string with your pinky finger.",
+      "midi": 69,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-11-maj7-string-6",
+      "prompt": "Play the perfect fifth\nof Bmaj7",
+      "instruction": "Use the thickest string (low E / string 6).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The perfect fifth is F♯3. Press fret 14 on the low E string with your middle finger.",
+      "midi": 54,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-11-maj7-string-5",
+      "prompt": "Play the root\nof Bmaj7",
+      "instruction": "Use the A string (string 5).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The root is B3. Press fret 14 on the A string with your ring finger.",
+      "midi": 59,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-11-maj7-string-4",
+      "prompt": "Play the major third\nof Bmaj7",
+      "instruction": "Use the D string (string 4).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The major third is D♯4. Press fret 13 on the D string with your index finger.",
+      "midi": 63,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-11-maj7-string-3",
+      "prompt": "Play the major seventh\nof Bmaj7",
+      "instruction": "Use the G string (string 3).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The major seventh is A♯4. Press fret 15 on the G string with your pinky finger.",
+      "midi": 70,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-11-dom7-string-6",
+      "prompt": "Play the perfect fifth\nof B7",
+      "instruction": "Use the thickest string (low E / string 6).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The perfect fifth is F♯3. Press fret 14 on the low E string with your middle finger.",
+      "midi": 54,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-11-dom7-string-5",
+      "prompt": "Play the root\nof B7",
+      "instruction": "Use the A string (string 5).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The root is B3. Press fret 14 on the A string with your ring finger.",
+      "midi": 59,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-11-dom7-string-4",
+      "prompt": "Play the major third\nof B7",
+      "instruction": "Use the D string (string 4).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The major third is D♯4. Press fret 13 on the D string with your index finger.",
+      "midi": 63,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-11-dom7-string-3",
+      "prompt": "Play the minor seventh\nof B7",
+      "instruction": "Use the G string (string 3).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The minor seventh is A4. Press fret 14 on the G string with your pinky finger.",
+      "midi": 69,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-11-min7-string-6",
+      "prompt": "Play the perfect fifth\nof Bm7",
+      "instruction": "Use the thickest string (low E / string 6).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The perfect fifth is F♯3. Press fret 14 on the low E string with your middle finger.",
+      "midi": 54,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-11-min7-string-5",
+      "prompt": "Play the root\nof Bm7",
+      "instruction": "Use the A string (string 5).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The root is B3. Press fret 14 on the A string with your ring finger.",
+      "midi": 59,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-11-min7-string-4",
+      "prompt": "Play the minor third\nof Bm7",
+      "instruction": "Use the D string (string 4).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The minor third is D4. Press fret 12 on the D string with your index finger.",
+      "midi": 62,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-11-min7-string-3",
+      "prompt": "Play the minor seventh\nof Bm7",
+      "instruction": "Use the G string (string 3).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The minor seventh is A4. Press fret 14 on the G string with your pinky finger.",
+      "midi": 69,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-11-half_dim-string-6",
+      "prompt": "Play the diminished fifth\nof Bm7♭5",
+      "instruction": "Use the thickest string (low E / string 6).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The diminished fifth is F3. Press fret 13 on the low E string with your middle finger.",
+      "midi": 53,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-11-half_dim-string-5",
+      "prompt": "Play the root\nof Bm7♭5",
+      "instruction": "Use the A string (string 5).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The root is B3. Press fret 14 on the A string with your ring finger.",
+      "midi": 59,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-11-half_dim-string-4",
+      "prompt": "Play the minor third\nof Bm7♭5",
+      "instruction": "Use the D string (string 4).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The minor third is D4. Press fret 12 on the D string with your index finger.",
+      "midi": 62,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-11-half_dim-string-3",
+      "prompt": "Play the minor seventh\nof Bm7♭5",
+      "instruction": "Use the G string (string 3).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The minor seventh is A4. Press fret 14 on the G string with your pinky finger.",
+      "midi": 69,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-11-dim7-string-6",
+      "prompt": "Play the diminished fifth\nof Bdim7",
+      "instruction": "Use the thickest string (low E / string 6).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The diminished fifth is F3. Press fret 13 on the low E string with your middle finger.",
+      "midi": 53,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-11-dim7-string-5",
+      "prompt": "Play the root\nof Bdim7",
+      "instruction": "Use the A string (string 5).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The root is B3. Press fret 14 on the A string with your ring finger.",
+      "midi": 59,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-11-dim7-string-4",
+      "prompt": "Play the minor third\nof Bdim7",
+      "instruction": "Use the D string (string 4).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The minor third is D4. Press fret 12 on the D string with your index finger.",
+      "midi": 62,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-11-dim7-string-3",
+      "prompt": "Play the diminished seventh\nof Bdim7",
+      "instruction": "Use the G string (string 3).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The diminished seventh is A♭4. Press fret 13 on the G string with your pinky finger.",
+      "midi": 68,
+      "match": "exact",
+      "string": 3
+    },
+    {
+      "id": "root-11-min_maj7-string-6",
+      "prompt": "Play the perfect fifth\nof Bm(maj7)",
+      "instruction": "Use the thickest string (low E / string 6).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The perfect fifth is F♯3. Press fret 14 on the low E string with your middle finger.",
+      "midi": 54,
+      "match": "exact",
+      "string": 6
+    },
+    {
+      "id": "root-11-min_maj7-string-5",
+      "prompt": "Play the root\nof Bm(maj7)",
+      "instruction": "Use the A string (string 5).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The root is B3. Press fret 14 on the A string with your ring finger.",
+      "midi": 59,
+      "match": "exact",
+      "string": 5
+    },
+    {
+      "id": "root-11-min_maj7-string-4",
+      "prompt": "Play the minor third\nof Bm(maj7)",
+      "instruction": "Use the D string (string 4).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The minor third is D4. Press fret 12 on the D string with your index finger.",
+      "midi": 62,
+      "match": "exact",
+      "string": 4
+    },
+    {
+      "id": "root-11-min_maj7-string-3",
+      "prompt": "Play the major seventh\nof Bm(maj7)",
+      "instruction": "Use the G string (string 3).\nOne octave above its lowest position on this string (frets 12–23).",
+      "hint": "The major seventh is A♯4. Press fret 15 on the G string with your pinky finger.",
+      "midi": 70,
+      "match": "exact",
+      "string": 3
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+# Local environments and generated output
+.venv*/
+.build-venv/
+__pycache__/
+*.py[cod]
+sessions/
+build/
+build-*/
+release/
+backups/
+data/
+output/
+tmp/
+.codex-attachments/
+.playwright-cli/
+node_modules/
+*.log
+*.partial
+
+# Local secrets and personal configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.sqlite*
+
+# Recordings, exports, models and downloaded binaries
+*.wav
+*.mp3
+*.flac
+*.mid
+*.midi
+*.sf3
+*.sf2
+*.gguf
+*.onnx
+*.pth
+*.pt
+*.exe
+*.dll
+*.pdb
+*.zip
+*.lnk
+NeuralNote/app/
+NeuralNote/downloads/
+NeuralNote/models/
+NeuralNote/MidiOut/
+NeuralNote/tools/
+NeuralNote/verification/
+StemSlicer/Originals/
+StemSlicer/models/
+StemSlicer/separated/
+StemSlicer/processing/
+StemSlicer/verification/
+StemSlicer/preview-cache/
+StemSlicer/song-folders.json
+
+# Independently managed checkouts
+NeuralNote/source/
+sites/
+
+# Downloaded SDKs and native build products
+tools/windows-midi/.build/
+tools/windows-midi/.dotnet/
+tools/windows-midi/bin/
+tools/windows-midi/obj/
+tools/windows-midi/packages/
+tools/windows-midi/publish/
+tools/jam-origin/loopMIDI/
+tools/reverse-engineering/downloads/
+tools/reverse-engineering/ghidra_12.1.4_PUBLIC/
+tools/reverse-engineering/jdk-21.0.12.1+1/
+
+# Machine-specific inspection output; retain research summaries
+research/**/*.json

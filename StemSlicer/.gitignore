@@ -1,0 +1,8 @@
+.venv/
+.venv-before-move/
+separated/
+verification/
+processing/
+models/
+Originals/
+__pycache__/

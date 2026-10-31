@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "id": "anywhere-v1",
+  "title": "Any string · all notes",
+  "description": "Play the named note anywhere from open low E to high E at fret 12.",
+  "cards": [
+    {
+      "id": "note-0",
+      "prompt": "Play C",
+      "instruction": "Choose any string. Open strings are allowed.\nUse a note from open low E up to high E at fret 12.",
+      "hint": "One place: low E string, fret 8",
+      "midi": 48,
+      "match": "pitch_class"
+    },
+    {
+      "id": "note-1",
+      "prompt": "Play C♯",
+      "instruction": "Choose any string. Open strings are allowed.\nUse a note from open low E up to high E at fret 12.",
+      "hint": "One place: low E string, fret 9",
+      "midi": 49,
+      "match": "pitch_class"
+    },
+    {
+      "id": "note-2",
+      "prompt": "Play D♭",
+      "instruction": "Choose any string. Open strings are allowed.\nUse a note from open low E up to high E at fret 12.",
+      "hint": "One place: low E string, fret 9",
+      "midi": 49,
+      "match": "pitch_class"
+    },
+    {
+      "id": "note-3",
+      "prompt": "Play D",
+      "instruction": "Choose any string. Open strings are allowed.\nUse a note from open low E up to high E at fret 12.",
+      "hint": "One place: low E string, fret 10",
+      "midi": 50,
+      "match": "pitch_class"
+    },
+    {
+      "id": "note-4",
+      "prompt": "Play D♯",
+      "instruction": "Choose any string. Open strings are allowed.\nUse a note from open low E up to high E at fret 12.",
+      "hint": "One place: low E string, fret 11",
+      "midi": 51,
+      "match": "pitch_class"
+    },
+    {
+      "id": "note-5",
+      "prompt": "Play E♭",
+      "instruction": "Choose any string. Open strings are allowed.\nUse a note from open low E up to high E at fret 12.",
+      "hint": "One place: low E string, fret 11",
+      "midi": 51,
+      "match": "pitch_class"
+    },
+    {
+      "id": "note-6",
+      "prompt": "Play E",
+      "instruction": "Choose any string. Open strings are allowed.\nUse a note from open low E up to high E at fret 12.",
+      "hint": "One place: low E string, fret 12",
+      "midi": 52,
+      "match": "pitch_class"
+    },
+    {
+      "id": "note-7",
+      "prompt": "Play F",
+      "instruction": "Choose any string. Open strings are allowed.\nUse a note from open low E up to high E at fret 12.",
+      "hint": "One place: low E string, fret 1",
+      "midi": 41,
+      "match": "pitch_class"
+    },
+    {
+      "id": "note-8",
+      "prompt": "Play F♯",
+      "instruction": "Choose any string. Open strings are allowed.\nUse a note from open low E up to high E at fret 12.",
+      "hint": "One place: low E string, fret 2",
+      "midi": 42,
+      "match": "pitch_class"
+    },
+    {
+      "id": "note-9",
+      "prompt": "Play G♭",
+      "instruction": "Choose any string. Open strings are allowed.\nUse a note from open low E up to high E at fret 12.",
+      "hint": "One place: low E string, fret 2",
+      "midi": 42,
+      "match": "pitch_class"
+    },
+    {
+      "id": "note-10",
+      "prompt": "Play G",
+      "instruction": "Choose any string. Open strings are allowed.\nUse a note from open low E up to high E at fret 12.",
+      "hint": "One place: low E string, fret 3",
+      "midi": 43,
+      "match": "pitch_class"
+    },
+    {
+      "id": "note-11",
+      "prompt": "Play G♯",
+      "instruction": "Choose any string. Open strings are allowed.\nUse a note from open low E up to high E at fret 12.",
+      "hint": "One place: low E string, fret 4",
+      "midi": 44,
+      "match": "pitch_class"
+    },
+    {
+      "id": "note-12",
+      "prompt": "Play A♭",
+      "instruction": "Choose any string. Open strings are allowed.\nUse a note from open low E up to high E at fret 12.",
+      "hint": "One place: low E string, fret 4",
+      "midi": 44,
+      "match": "pitch_class"
+    },
+    {
+      "id": "note-13",
+      "prompt": "Play A",
+      "instruction": "Choose any string. Open strings are allowed.\nUse a note from open low E up to high E at fret 12.",
+      "hint": "One place: low E string, fret 5",
+      "midi": 45,
+      "match": "pitch_class"
+    },
+    {
+      "id": "note-14",
+      "prompt": "Play A♯",
+      "instruction": "Choose any string. Open strings are allowed.\nUse a note from open low E up to high E at fret 12.",
+      "hint": "One place: low E string, fret 6",
+      "midi": 46,
+      "match": "pitch_class"
+    },
+    {
+      "id": "note-15",
+      "prompt": "Play B♭",
+      "instruction": "Choose any string. Open strings are allowed.\nUse a note from open low E up to high E at fret 12.",
+      "hint": "One place: low E string, fret 6",
+      "midi": 46,
+      "match": "pitch_class"
+    },
+    {
+      "id": "note-16",
+      "prompt": "Play B",
+      "instruction": "Choose any string. Open strings are allowed.\nUse a note from open low E up to high E at fret 12.",
+      "hint": "One place: low E string, fret 7",
+      "midi": 47,
+      "match": "pitch_class"
+    }
+  ]
+}
