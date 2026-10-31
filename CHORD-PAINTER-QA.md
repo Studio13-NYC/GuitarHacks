@@ -1,5 +1,28 @@
 # Chord Painter verification
 
+## Round review, career chart and local JSON - October 31, 2026 (candidate)
+
+Source verified; updated candidate packaging is in progress and the user's installed app remains the Retry release below. Explicit round IDs and compact per-type round summaries retain chronological career columns beyond the 300 detailed-history limit. Retries update the same column and retain earlier failures. Legacy totals are preserved without inventing old round boundaries. Guess and Paint charts are separate, with text counts and selectable cell details alongside red/yellow/green/gray.
+
+Local analysis, saved comments/preferences, and a bounded next-question plan work in the real Qt view. The key was entered through the approved hidden prompt into ignored `.env.local` and the existing `swa-guitarhacks` backend settings. Values were compared without printing. A real native GPT review using gpt-5.4-mini succeeded with synthetic practice data. Missing credentials, malformed output, stale replies and cancellation preserve scores. Azure's initial static deployment is live at https://ashy-flower-0dd2cfa0f.3.azurestaticapps.net; the new review API and local-file bundle are pending deployment. Hosted GPT access is restricted to `github:nickknyc`.
+
+- `node --test test_painter.cjs test_painter_career.cjs test_practice_file.cjs api/review.test.cjs`: 26 passed. Storage tests cover serialized saves, deletion, external edits and failed writes.
+- `.venv\Scripts\python.exe -m unittest test_painter_listening test_painter_bridge test_painter_coach test_chord_listening test_guitar_setup`: 37 passed (`build/painter-local-file-tests.log`).
+- Qt screenshots: `build/painter-round-review.png`, `build/painter-career-chart.png`. Chart screenshot uses synthetic QA history, not user scores. Tests use isolated data and generated audio.
+- Real Edge browser UI: created a JSON file, completed a Guess round, saved a review comment, reopened the file, displayed the saved career column, deleted the file, verified a subsequent save did not recreate it, and created an empty new profile. The picker boundary was replaced for automation with a disposable browser FileSystemFileHandle; actual browser file writes and the production UI/storage code were exercised. The native OS picker/permission dialog was not automated. Screenshots: `output/playwright/local-json-career.png` and `output/playwright/local-json-fresh.png`. No personal data was used. Headless installed Chrome exited during startup; Edge worked.
+- Credential helper: `tools/set-openai-key.ps1`, used successfully after explicit destination approval. See `docs/openai-key-setup.md`.
+- Codex CLI 0.130.0 reports ChatGPT sign-in but review probes using gpt-6.1-sol and gpt-5.4 were rejected as unsupported; no tokens were extracted or copied.
+
+## Retry button and voice command - October 31, 2026
+
+Installed after explicit approval and reopened with `--painter`. Backup: `backups/painter-retry-install-20261031-135348` (prior executable and full saved-data folder). All four saved files matched during replacement; chord-painter.json and soft-cue.wav still match after reopening. The running app locks progress.sqlite3, so its hash was verified before launch. Native UI confirms Play calibration and Voice on: Go / Next / Retry / Quit. Left waiting for open low E. No live playing accuracy claim. SHA-256: `369AC84B75A1B5FEC71BD43F568C1D2D8416F4832BE96024FD207D0D65927366`. Packaged index.html, app.js, core.js, style.css and sw.js all match the tested source. Retry preserves the question and earlier failed tries, resets its timer/guess allowance, and can repeat after the normal limit. History labels each try; retrying the final already-saved failure appends only new results. Correctly completed questions cannot be retried. Completed listening cues hide so Retry and the next action remain visible at 1100 x 780.
+
+- `node --test test_painter.cjs`: 13 passed, including repeated retries and saving the final question without double-counting.
+- `.venv\Scripts\python.exe -m unittest test_painter_listening test_painter_bridge test_chord_listening test_guitar_setup`: 29 passed; `build/painter-retry-tests.log`.
+- Actual Qt WebEngine/PainterBridge tests cover button Retry, spoken-command routing, wrong/wrong/correct history, a new guided pass on the same chord, duplicate Retry rejection, and the visible button at normal window size. Screenshot: `build/painter-retry-failed.png`. Generated guitar signals and isolated temporary data were used; user progress was untouched.
+- `build/verify_voice_engine.py` exercised the production Windows SAPI grammar and handler with Zira-generated WAVs: Go, Next, Retry and Quit all recognized. This is not a live-person accuracy test.
+- Build command: `powershell -NoProfile -ExecutionPolicy Bypass -File .\build.ps1 -OutputDirectory build\painter-retry-release`; log `build/painter-retry-build.log`.
+
 ## Fretboard-focused desktop layout — October 31, 2026
 
 Installed after explicit restart approval on October 31. Backup: `backups/painter-focus-install-20261031-133822` (prior executable and full data folder). All saved files matched before reopening; chord-painter.json, progress.sqlite3 and soft-cue.wav still match after reopening. Saved totals are 19 correct / 14 failed; note names remain off and intervals on. Installed SHA-256: `4F112CAC2F709567F7111F0AE905A171955610DCC9B4AC85CA2EB1CFB6FF4439`. Reopened installed app with `--painter`: Play started calibration on Guitar-DI channel 0, the full fretboard and low-E prompt were visible, and voice status showed Go / Next / Quit ready. Left open at calibration; live playing accuracy was not assessed.

@@ -27,3 +27,27 @@ class PainterStorageTests(unittest.TestCase):
             path.write_text('broken JSON', encoding='utf-8')
             self.assertEqual(PainterBridge(folder).load(), 'broken JSON')
             self.assertEqual(path.read_text(encoding='utf-8'), 'broken JSON')
+
+    def test_deleted_file_is_not_recreated_by_an_open_window(self):
+        with tempfile.TemporaryDirectory() as folder:
+            bridge = PainterBridge(folder)
+            raw = json.dumps(dict(version=1, config={}, history=[], stats={}))
+            bridge.save(raw)
+            bridge.path.unlink()
+            with self.assertLogs(level='ERROR'):
+                bridge.save(raw)
+            self.assertFalse(bridge.path.exists())
+            fresh = PainterBridge(folder)
+            self.assertEqual(fresh.load(), '')
+            fresh.save(raw)
+            self.assertTrue(fresh.path.exists())
+
+    def test_external_edit_is_not_overwritten(self):
+        with tempfile.TemporaryDirectory() as folder:
+            bridge = PainterBridge(folder)
+            raw = json.dumps(dict(version=1, config={}, history=[], stats={}))
+            bridge.save(raw)
+            bridge.path.write_text('external edit', encoding='utf-8')
+            with self.assertLogs(level='ERROR'):
+                bridge.save(raw)
+            self.assertEqual(bridge.path.read_text(encoding='utf-8'), 'external edit')

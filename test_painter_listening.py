@@ -217,16 +217,129 @@ class PainterListeningTests(unittest.TestCase):
         QTest.qWait(80)
         self.view.listener.command.emit('next');QTest.qWait(80)
         self.assertEqual(self.js("document.getElementById('attempts').textContent"),'1 / 3')
-
         self.assertEqual(self.view.listener.pass_.stage,'strum')
         self.view.listener.command.emit('next');QTest.qWait(80)
         self.assertEqual(self.js("document.getElementById('attempts').textContent"),'1 / 3')
+
+    def test_voice_retry_keeps_saved_failure_and_records_success_on_same_question(self):
+        self.view.resize(1100,780)
+        capture=self.calibrate()
+        self.js("document.getElementById('questions').value=1;document.getElementById('questions').dispatchEvent(new Event('change'));document.getElementById('limit').value=1;document.getElementById('limit').dispatchEvent(new Event('change'))")
+        self.view.listener.command.emit('go');QTest.qWait(60)
+        target=self.js("document.getElementById('chord-name').textContent")
+        def play(frets):
+            capture.quiet(8);capture.tone(40,3);capture.quiet(8);QTest.qWait(50)
+            for midi,fret in zip([40,45,50,55,59,64],frets):
+                if fret is None:
+                    noise=np.random.default_rng(17).normal(0,.15,4096)*np.exp(-np.arange(4096)/1200)
+                    capture.send(noise)
+                else:capture.tone(midi+fret)
+                capture.quiet(8)
+            QTest.qWait(60)
+        play([0]*6)
+        self.view.listener.command.emit('next');QTest.qWait(60)
+        self.assertEqual(self.js("document.getElementById('failed-total').textContent"),'1')
+        self.assertFalse(self.js("document.getElementById('retry-question').disabled"))
+        QTest.qWait(80)
+        self.assertTrue(self.js("document.getElementById('retry-question').getBoundingClientRect().bottom < innerHeight"))
+        self.view.grab().save(str(ROOT/'build'/'painter-retry-failed.png'))
+        self.view.listener.command.emit('retry');QTest.qWait(60)
+        self.assertEqual(self.js("document.getElementById('chord-name').textContent"),target)
+        self.assertEqual(self.js("document.getElementById('question-progress').textContent"),'Question 1 of 1 · Try 2')
+        self.assertEqual(self.view.listener.pass_.stage,'strum')
+        self.view.listener.command.emit('retry');QTest.qWait(40)
+        self.assertEqual(self.js("document.getElementById('question-progress').textContent"),'Question 1 of 1 · Try 2')
+        shape=json.loads(self.js("JSON.stringify(ChordCore.shape(8,ChordCore.parse(document.getElementById('chord-name').textContent).id))"))
+        play(shape)
+        self.assertEqual(self.view.listener.pass_.stage,'complete')
+        self.view.listener.command.emit('next');QTest.qWait(80)
+        saved=json.loads((Path(self.temp.name)/'chord-painter.json').read_text())
+        self.assertEqual([r['result'] for r in saved['history']],['failed','correct'])
+        self.assertEqual([r['attempt'] for r in saved['history']],[1,2])
+        self.assertEqual([r['name'] for r in saved['history']],[target,target])
+        self.assertEqual(self.js("document.getElementById('correct-total').textContent"),'1')
+        self.assertEqual(self.js("document.getElementById('failed-total').textContent"),'1')
+        self.assertTrue(self.js("document.getElementById('retry-question').hidden"))
+
+    def test_button_retry_repeated_wrong_guesses_keep_the_question_and_history(self):
+        self.js("document.querySelector('[data-mode=guess]').click();document.getElementById('questions').value=1;document.getElementById('questions').dispatchEvent(new Event('change'));document.getElementById('limit').value=1;document.getElementById('limit').dispatchEvent(new Event('change'));document.getElementById('start').click()")
+        for attempt in (1,2):
+            self.js("document.getElementById('guess-input').value='not a chord';document.getElementById('guess-form').requestSubmit()")
+            QTest.qWait(50)
+            target=self.js("document.getElementById('chord-name').textContent")
+            self.js("document.getElementById('retry-question').click()")
+            self.assertEqual(self.js("document.getElementById('question-progress').textContent"),f'Question 1 of 1 · Try {attempt+1}')
+            self.assertTrue(self.js("document.getElementById('chord-name').hidden"))
+        self.js(f"document.getElementById('guess-input').value={json.dumps(target)};document.getElementById('guess-form').requestSubmit()")
+        QTest.qWait(80)
+        saved=json.loads((Path(self.temp.name)/'chord-painter.json').read_text())
+        self.assertEqual([r['result'] for r in saved['history']],['failed','failed','correct'])
+        self.assertEqual([r['attempt'] for r in saved['history']],[1,2,3])
+        self.assertEqual(self.js("document.getElementById('accuracy').textContent"),'33%')
 
     def test_production_view_enables_voice_with_explicit_capture_factory(self):
         from voice_commands import VoiceCommands
         view=PainterView(self.temp.name,ROOT,settings=lambda:self.settings,capture_factory=TestCapture)
         self.assertIs(view.listener.voice_factory,VoiceCommands)
         view.shutdown();view.close();QTest.qWait(50)
+
+    def test_round_review_saves_preferences_and_starts_the_prepared_queue(self):
+        self.view.resize(1100,780)
+        self.js("document.querySelector('[data-mode=guess]').click();document.getElementById('questions').value=1;document.getElementById('questions').dispatchEvent(new Event('change'));document.getElementById('limit').value=1;document.getElementById('limit').dispatchEvent(new Event('change'));document.getElementById('start').click();document.getElementById('guess-input').value='wrong';document.getElementById('guess-form').requestSubmit()")
+        self.assertTrue(self.js("document.getElementById('review-dialog').open"))
+        target_type=self.js("document.getElementById('chord-description').textContent")
+        self.assertIn(target_type,self.js("document.getElementById('round-analysis').textContent"))
+        self.js("let p=document.querySelector('#review-types select');p.value=-1;p.dispatchEvent(new Event('change'));let n=document.getElementById('review-notes');n.value='I confuse major and minor';n.dispatchEvent(new Event('input'))")
+        QTest.qWait(80)
+        saved=json.loads((Path(self.temp.name)/'chord-painter.json').read_text())
+        self.assertEqual(len(saved['rounds']),1)
+        self.assertEqual(saved['rounds'][0]['review']['notes'],'I confuse major and minor')
+        self.assertEqual(saved['practicePreferences']['guess']['types']['major'],-1)
+        self.view.grab().save(str(ROOT/'build'/'painter-round-review.png'))
+        expected=self.js("document.querySelector('#next-plan strong').textContent.split(' × ')[0]")
+        self.js("document.getElementById('start-planned').click()")
+        self.assertFalse(self.js("document.getElementById('review-dialog').open"))
+        self.assertEqual(self.js("document.getElementById('question-progress').textContent"),'Question 1 of 1')
+        self.js("document.getElementById('reveal').click()")
+        self.assertEqual(self.js("document.getElementById('chord-description').textContent"),expected)
+
+    def test_career_chart_survives_reload_and_separates_game_histories(self):
+        self.view.shutdown();self.view.close();QTest.qWait(50)
+        types=['major','minor','7','maj7','m7','dim']
+        rounds=[]
+        for i in range(6):
+            rows={}
+            for j,kind in enumerate(types):
+                color=(i+j)%3
+                rows[kind]=dict(correct=[0,1,2][color],failed=[2,1,0][color],misses=[2,1,0][color],retries=[1,1,0][color],timeouts=0,questions=2)
+            rounds.append(dict(id=f'qa-{i}',mode='guess',started=f'2026-10-{20+i:02}T12:00:00Z',byType=rows,seconds=20,limit=3))
+        rounds.append(dict(id='paint-only',mode='paint',started='2026-10-29T12:00:00Z',byType={'major':dict(correct=1,failed=0,misses=0,retries=0,timeouts=0,questions=1)}))
+        (Path(self.temp.name)/'chord-painter.json').write_text(json.dumps(dict(version=1,config={},history=[],stats={},rounds=list(reversed(rounds)))))
+        self.open_view();self.view.resize(1100,780)
+        self.js("document.querySelector('[data-mode=guess]').click();document.getElementById('career-button').click()")
+        self.assertTrue(self.js("document.getElementById('career-dialog').open"))
+        self.assertEqual(self.js("document.querySelectorAll('#career-chart thead th').length"),7)
+        self.assertEqual(self.js("document.querySelectorAll('#career-chart tbody tr').length"),15)
+        self.assertIn('Oct 20',self.js("document.querySelectorAll('#career-chart thead th')[1].textContent"))
+        self.js("document.querySelector('#career-chart .red').click()")
+        self.assertIn('failed tries',self.js("document.getElementById('career-detail').textContent"))
+        QTest.qWait(100);self.view.grab().save(str(ROOT/'build'/'painter-career-chart.png'))
+        self.js("document.getElementById('career-mode').value='paint';document.getElementById('career-mode').dispatchEvent(new Event('change'))")
+        self.assertEqual(self.js("document.querySelectorAll('#career-chart thead th').length"),2)
+
+    def test_review_failure_preserves_scores_and_stale_advice_cannot_replace_changed_notes(self):
+        self.js("document.querySelector('[data-mode=guess]').click();document.getElementById('questions').value=1;document.getElementById('questions').dispatchEvent(new Event('change'));document.getElementById('limit').value=1;document.getElementById('limit').dispatchEvent(new Event('change'));document.getElementById('start').click();document.getElementById('guess-input').value='wrong';document.getElementById('guess-form').requestSubmit()")
+        from unittest.mock import patch
+        with patch('painter_coach.credentials',return_value=('','gpt-5.4-mini')):
+            self.js("document.getElementById('analyze-comments').click()")
+            QTest.qWait(100)
+        self.assertIn('not connected',self.js("document.getElementById('coach-status').textContent"))
+        self.assertFalse(self.js("document.getElementById('start-planned').disabled"))
+        self.js("document.getElementById('review-notes').value='A new comment';document.getElementById('review-notes').dispatchEvent(new Event('input'))")
+        self.view.bridge.reviewReady.emit('2',json.dumps({'summary':'OLD RESPONSE','priorities':[]}));QTest.qWait(80)
+        self.assertNotIn('OLD RESPONSE',self.js("document.getElementById('coach-status').textContent"))
+        saved=json.loads((Path(self.temp.name)/'chord-painter.json').read_text())
+        self.assertEqual(saved['history'][0]['result'],'failed');self.assertEqual(saved['rounds'][0]['review']['notes'],'A new comment')
 
     def test_shutdown_status_does_not_read_closed_settings_store(self):
         capture=self.calibrate()

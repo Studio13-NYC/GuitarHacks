@@ -10,14 +10,27 @@
   function warn(message){$('storage-warning').hidden=false;$('storage-warning').textContent=message;}
   const defaults={rootFret:8,quality:'major',pool:'all',keys:'current',limit:3,seconds:20,questions:10,showNotes:true,showIntervals:true};
   let data={version:1,config:{...defaults},history:[],stats:{}};
+  let practiceFile=null;
+  if(!bridge){
+    practiceFile=await PracticeFiles.choose(data,(message,error)=>{
+      $('practice-file-status').textContent=message;
+      if(error){data.readOnly=true;warn(message+' Close and reopen the app to choose a file.');}
+    });
+    $('practice-file-controls').hidden=false;
+    $('practice-file-reopen').onclick=()=>{
+      if(practiceFile.pending){warn('A save is still in progress. Wait for Saved before reopening.');return;}
+      if(confirm('Reopen practice? Any unfinished round will be discarded. Saved results stay in your JSON file.'))location.reload();
+    };
+    addEventListener('beforeunload',event=>{if(practiceFile.pending){event.preventDefault();event.returnValue='';}});
+  }
   try{
-    const raw=bridge ? await new Promise(resolve=>bridge.load(resolve)) : localStorage.getItem('chord-painter-v1');
+    const raw=bridge ? await new Promise(resolve=>bridge.load(resolve)) : practiceFile.raw;
     if(raw){const saved=JSON.parse(raw);if(saved.version!==1||!Array.isArray(saved.history)||!saved.stats)throw new Error('Unsupported saved data');data=saved;data.config={...defaults,...data.config};}
   }catch(e){warn('Saved practice could not be loaded. New results will not overwrite it. '+e.message);data.readOnly=true;}
-  if(bridge)bridge.error.connect(warn);
+  if(bridge)bridge.error.connect(message=>{data.readOnly=true;warn(message);});
   function save(){
     if(data.readOnly)return;
-    try{const value=JSON.stringify(data);if(bridge)bridge.save(value);else localStorage.setItem('chord-painter-v1',value);}
+    try{const value=JSON.stringify(data,null,2);if(bridge)bridge.save(value);else practiceFile.save(value).catch(()=>{});}
     catch(e){warn('Progress could not be saved on this device. '+e.message);}
   }
   for(const name of ['settings','audio']){
@@ -33,6 +46,11 @@
   if(!C.quality(data.config.quality))data.config.quality='major';
   let mode='instant',frets=C.shape(data.config.rootFret,data.config.quality),round=null,practice=null,recorded=false,revealed=false,lastTarget='',paintedTarget=null;
   let referenceRoot=C.rootAt(data.config.rootFret),anchorFret=data.config.rootFret;
+  let pendingPracticePlan=null;
+  const reviewBridge=bridge||(/^https?:$/.test(location.protocol)?createWebCoach():null);
+  $('coach-signin').hidden=!!bridge;
+  const review=createPainterReview({data,save,bridge:reviewBridge,getMode:()=>mode,getTargets:targets,start:startRound,retry:retryQuestion,
+    pauseForChart:()=>{if(locked())pauseForNavigation();$('settings-dialog').close();}});
   let preferredInputMode=bridge?'play':'click';
   let inputMode=preferredInputMode,listeningBusy=false,listenState=null,listeningRound=null,resumeAfterListen=false,playActive=false,calibrated=false;
   // The root anchors transposition; scrolling the five-fret window never moves notes.
@@ -60,6 +78,11 @@
   function locked(){return !!(round&&round.status==='active');}
   function inRound(){return !!(practice&&!practice.complete);}
   function canEdit(){return !listeningBusy&&(mode==='instant'||(mode==='paint'&&locked()&&!round.paused));}
+  function canRetry(){
+    if(!round||mode==='instant'||round.status==='correct')return false;
+    if(inputMode==='play'&&(!playActive||!calibrated||listenState?.stage?.startsWith('calibration')))return false;
+    return completed()||round.used>0||(!listeningBusy&&(mode==='guess'?!!$('guess-input').value.trim():frets.some(f=>f!==null)));
+  }
   function renderHearing(){
     const p=listenState?.heard,setup=listenState?.stage?.startsWith('calibration');
     if(!p){$('listen-heard').textContent=playActive&&listeningBusy?'Waiting for a clear note…':'';return;}
@@ -93,7 +116,7 @@
       });
     }
     const voice=$('voice-status').textContent;
-    $('voice-cue').textContent=voice.startsWith('Voice ready')?'Voice on · Go / Next / Quit':voice.includes('Opening')?'Starting voice…':playActive?'Voice unavailable · use the buttons':'';
+    $('voice-cue').textContent=voice.startsWith('Voice ready')?'Voice on · Go / Next / Retry / Quit':voice.includes('Opening')?'Starting voice…':playActive?'Voice unavailable · use the buttons':'';
     $('input-setting').hidden=mode==='guess';
     $('listen-availability').hidden=!!bridge;
     $('input-mode').disabled=!bridge||inRound();
@@ -101,7 +124,7 @@
     $('listen-details').hidden=inputMode!=='play';
     $('listen-start').disabled=!bridge;
     $('listen-stop').disabled=!playActive;
-    $('play-again').hidden=!playActive||!calibrated||listeningBusy||(mode==='paint'&&!locked());
+    $('play-again').hidden=mode!=='instant'||!playActive||!calibrated||listeningBusy;
     $('play-again').textContent=mode==='instant'?'Go — play chord':'Play chord again';
     $('play-again').disabled=mode==='paint'&&!locked();
     $('listen-help').disabled=!playActive;
@@ -140,6 +163,7 @@
     listeningBusy=true;render();bridge.listenBegin();
   }
   function quitPlay(){
+    pendingPracticePlan=null;
     stopListening(false);round=null;practice=null;recorded=false;frets=[null,null,null,null,null,null];
     message('Round stopped. Earlier saved results are kept.');render();
   }
@@ -156,10 +180,18 @@
     bridge.voiceStatus.connect(text=>{if(playActive){$('voice-status').textContent=text;syncListening();}});
     bridge.voiceCommand.connect(word=>{
       if(!playActive||document.hidden||$('settings-dialog').open||$('audio-dialog').open)return;
+      if($('career-dialog').open)return;
+      if(review.isOpen()){
+        if(word==='retry'){review.close();retryQuestion();}
+        else if(word==='go')review.startPlanned();
+        else if(word==='quit'){review.close();quitPlay();}
+        return;
+      }
       if(word==='quit')quitPlay();
+      else if(word==='retry')retryQuestion();
       else if(word==='go'&&calibrated&&!listeningBusy){
         if(!inRound()&&mode==='paint')startRound();
-        else if(mode==='instant'||locked())beginAnswer();
+        else if(mode==='instant')beginAnswer();
       }else if(word==='next'&&calibrated&&!listeningBusy){
         if(completed()&&inRound())startQuestion();
         else if(locked()&&!round.paused&&listenState?.stage==='complete')$('submit-paint').click();
@@ -178,6 +210,7 @@
         resumeAfterListen=false;frameChord();
       }
       if(state.stage==='ready'&&oldStage!=='ready'&&!inRound())message('Ready. Click or say Go to begin.');
+      if(state.stage==='ready'&&pendingPracticePlan){const plan=pendingPracticePlan;pendingPracticePlan=null;startRound(plan);return;}
       if(state.stage==='ready'&&oldStage!=='ready'&&locked()){beginAnswer();return;}
       if(oldStage!==state.stage)render();
       else{syncListening();if(previous!==JSON.stringify([frets,state.index,state.stage])){renderGrid();renderAnswer();}}
@@ -190,13 +223,16 @@
     $('questions-field').hidden=mode==='instant';
     for(const [id] of settings)$(id).disabled=inRound()||listeningBusy;
     $('clear').hidden=mode==='guess';$('reset').hidden=mode!=='instant';$('clear').disabled=!canEdit();
-    $('start').hidden=mode==='instant'||inRound();$('start').textContent=inputMode==='play'?'Go →':practice?.complete?'New round →':'Start round →';$('start').disabled=inputMode==='play'&&(!calibrated||listeningBusy);$('quit').hidden=!inRound()&&!playActive;
+    $('start').hidden=mode==='instant'||inRound();$('start').textContent=practice?.complete?'Review & next round →':inputMode==='play'?'Go →':'Start round →';$('start').disabled=inputMode==='play'&&(!calibrated||listeningBusy);$('quit').hidden=!inRound()&&!playActive;
     $('next').hidden=!completed()||!!practice?.complete;
+    $('retry-question').hidden=mode==='instant'||!round||round.status==='correct';
+    $('retry-question').disabled=!canRetry();
     $('reset-round').hidden=!practice;
     $('reset-round').disabled=listeningBusy;$('reset').disabled=listeningBusy;
     $('round-info').hidden=!practice;
     if(practice){
-      $('question-progress').textContent=practice.complete?'Round complete':`Question ${practice.results.length+(locked()?1:0)} of ${practice.count}`;
+      const attempt=completed()?practice.results.at(-1)?.attempt:practice.attemptNumber;
+      $('question-progress').textContent=(practice.complete?'Round complete':`Question ${practice.results.length+(locked()?1:0)} of ${practice.count}`)+(attempt>1?` · Try ${attempt}`:'');
       $('round-score').textContent=`${practice.correct} correct · ${practice.failed} failed`;
     }
     $('pause').hidden=!locked();$('pause').textContent=round?.paused?'Resume':'Pause';
@@ -284,7 +320,7 @@
     }
     $('alternatives').textContent=mode==='instant'&&matches.length>1?'Also '+matches.slice(1,3).map(m=>m.name).join(' · '):'';
   }
-  function render(){syncControls();renderGrid();renderAnswer();renderClock();}
+  function render(){document.body.classList.toggle('question-complete',completed());syncControls();renderGrid();renderAnswer();renderClock();}
   function renderClock(){
     if(!round)return;
     const remaining=round.paused?round.remaining:Math.max(0,round.deadline-Date.now());
@@ -292,15 +328,29 @@
     $('attempts').textContent=round.used+' / '+round.limit;
   }
   function summary(){
-    const values=Object.values(data.stats),correct=values.reduce((n,v)=>n+v.correct,0),failed=values.reduce((n,v)=>n+v.failed,0);
+    const values=Object.values(data.stats).filter(v=>mode==='instant'||v.mode===mode),correct=values.reduce((n,v)=>n+v.correct,0),failed=values.reduce((n,v)=>n+v.failed,0);
     $('correct-total').textContent=correct;$('failed-total').textContent=failed;$('accuracy').textContent=correct+failed?Math.round(correct/(correct+failed)*100)+'%':'—';
-    const weak=Object.values(data.stats).filter(s=>s.misses>0).sort((a,b)=>b.misses-a.misses).slice(0,2);
+    const weak=values.filter(s=>s.misses>0).sort((a,b)=>b.misses-a.misses).slice(0,2);
     $('review-note').textContent=weak.length?'Worth revisiting: '+weak.map(s=>s.name+' · '+s.misses+' missed '+(s.misses===1?'guess':'guesses')).join('; ')+'.':'Your completed rounds will build a practice history here.';
   }
-  function finish(){
+  function finish(commit=true){
     if(!completed()||recorded)return;recorded=true;
-    practice.add({time:new Date().toISOString(),name:C.name(round.root,round.id),root:round.root,id:round.id,mode,result:round.status,used:round.used,limit:round.limit,seconds:round.seconds,events:[...round.events],revealed});
-    if(practice.commit(data)){save();summary();}
+    practice.add({time:new Date().toISOString(),name:C.name(round.root,round.id),root:round.root,id:round.id,mode,result:round.status,used:round.used,limit:round.limit,seconds:round.seconds,events:[...round.events],revealed,retried:!!round.retried});
+    if(commit&&practice.commit(data)){save();summary();}
+  }
+  function retryQuestion(){
+    if(!canRetry())return;
+    const nextRound=round.retry(Date.now());
+    if(!nextRound)return;
+    finish(false);
+    if(!practice.retryLast())return;
+    round=nextRound;recorded=false;revealed=false;
+    frets=mode==='guess'?[...round.frets]:[null,null,null,null,null,null];
+    $('guess-input').value='';frameChord();
+    message(`Try ${practice.attemptNumber} — same chord. Earlier wrong results are kept.`);
+    if(inputMode==='play')beginAnswer();
+    render();
+    if(mode==='guess')$('guess-input').focus({preventScroll:true});
   }
   function outcome(result){
     if(result==='inactive')return;
@@ -308,9 +358,10 @@
     else if(round.status==='failed')message('Question failed. The answer is '+C.name(round.root,round.id)+'.','failed');
     else message((result==='timeout'?'Time’s up for that guess.':'Not quite.')+' '+(round.limit-round.used)+' '+(round.limit-round.used===1?'guess':'guesses')+' left. Fresh timer started.','wrong');
     finish();
-    if(practice.complete)$('feedback').textContent+=` Round complete: ${practice.correct} of ${practice.count} correct. Results saved.`;
+    if(practice.complete)$('feedback').textContent+=` Round complete: ${practice.correct} correct · ${practice.failed} failed tries. Results saved.`;
     if(inputMode==='play'&&locked()&&playActive&&calibrated)beginAnswer();
     render();
+    if(practice.complete)review.open({id:practice.id,canRetry:round.status==='failed'});
   }
   function targets(){
     const ids=data.config.pool==='triads'?['major','minor','dim']:data.config.pool==='sevenths'?['7','maj7','m7','m7b5','dim7','mMaj7']:['major','minor','dim','7','maj7','m7','m7b5','dim7','mMaj7'];
@@ -318,6 +369,7 @@
     return frets.flatMap(fret=>ids.map(id=>({fret,root:C.rootAt(fret),id})));
   }
   function choose(){
+    if(practice?.plan[practice.results.length])return practice.plan[practice.results.length];
     const options=targets().filter(t=>t.fret+':'+t.id!==lastTarget);
     const weights=options.map(t=>{const s=data.stats[mode+':'+t.root+':'+t.id];return s?1+Math.min(4,(s.failed*2+s.misses)/(s.correct+1)):2;});
     let roll=Math.random()*weights.reduce((a,b)=>a+b,0),selected=options.at(-1);
@@ -333,17 +385,21 @@
     if(mode==='guess')$('guess-input').focus({preventScroll:true});
     if(mode==='paint'&&inputMode==='play')beginAnswer();
   }
-  function startRound(){
-    if(inputMode==='play'&&mode==='paint'&&(!calibrated||!playActive))return;
-    practice=new C.PracticeRound(data.config.questions);lastTarget='';startQuestion();
+  function startRound(plan=null){
+    if(inputMode==='play'&&mode==='paint'&&(!calibrated||!playActive)){
+      pendingPracticePlan=plan||review.makePlan();calibrate();return;
+    }
+    practice=new C.PracticeRound(data.config.questions);practice.plan=plan||review.makePlan();
+    if(paintedTarget)practice.plan[0]={...paintedTarget};lastTarget='';startQuestion();
   }
   document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{
     if(b.dataset.mode===mode)return;
+    pendingPracticePlan=null;
     if(b.dataset.mode==='guess'||inputMode!=='play')stopListening();
     clearListeningReview();
     const current=mode==='instant'?C.identify(frets,referenceRoot)[0]:null;
     paintedTarget=b.dataset.mode==='guess'&&current?{root:current.root,id:current.id,fret:anchorFret,frets:[...frets]}:null;
-    mode=b.dataset.mode;round=null;practice=null;referenceRoot=C.rootAt(data.config.rootFret);anchorFret=data.config.rootFret;
+    mode=b.dataset.mode;round=null;practice=null;summary();referenceRoot=C.rootAt(data.config.rootFret);anchorFret=data.config.rootFret;
     inputMode=mode==='guess'?'click':preferredInputMode;
     frets=mode==='paint'?[null,null,null,null,null,null]:paintedTarget?[...paintedTarget.frets]:C.shape(anchorFret,data.config.quality);
     frameChord();
@@ -371,8 +427,10 @@
   $('lower-frets').onclick=()=>{firstFret=Math.max(1,firstFret-1);renderGrid();};
   $('higher-frets').onclick=()=>{firstFret++;renderGrid();};
   $('reset').onclick=()=>{clearListeningReview();frets=C.shape(data.config.rootFret,data.config.quality);frameChord();message('E-shape loaded. Make it your own.');render();};
-  $('start').onclick=startRound;
+  $('start').onclick=()=>{if(practice?.complete)review.open({id:practice.id,canRetry:round.status==='failed'});else startRound();};
   $('next').onclick=()=>{if(completed()&&inRound())startQuestion();};
+  $('retry-question').onclick=retryQuestion;
+  $('guess-input').oninput=()=>{$('retry-question').disabled=!canRetry();};
   $('reset-round').onclick=()=>{paintedTarget=null;startRound();message('Round reset. Question 1, a fresh timer, and no guesses used.');};
   $('guess-form').onsubmit=e=>{e.preventDefault();if(!round||!$('guess-input').value.trim())return;outcome(round.submit($('guess-input').value,Date.now()));};
   $('submit-paint').onclick=()=>outcome(round.submit(frets,Date.now()));
@@ -397,7 +455,7 @@
     if(!data.history.length)$('history-rows').textContent='No completed rounds yet. Choose Guess or Paint the chord to begin.';
     for(const h of data.history.slice(-30).reverse()){
       const row=document.createElement('div');row.className='history-row';const left=document.createElement('div'),right=document.createElement('div');
-      left.textContent=h.name+' · '+(h.mode==='guess'?'Name it':'Paint it');right.textContent=(h.result==='correct'?'Correct':'Failed')+' · '+h.used+'/'+h.limit+' guesses';row.append(left,right);$('history-rows').append(row);
+      left.textContent=h.name+' · '+(h.mode==='guess'?'Name it':'Paint it')+(h.attempt?` · Try ${h.attempt}`:'');right.textContent=(h.result==='correct'?'Correct':'Failed')+' · '+h.used+'/'+h.limit+' guesses';row.append(left,right);$('history-rows').append(row);
     }
     $('history').showModal();
   };

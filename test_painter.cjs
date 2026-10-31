@@ -74,3 +74,50 @@ test('A round ends at the configured question count and saves its results exactl
     assert.equal(data.history.length,count+(count===1?1:0));
   }
 });
+
+test('Retry keeps the same target, counts an abandoned try, and gives a fresh timer',()=>{
+  const first=make('paint');first.pause(1500);
+  const second=first.retry(5000);
+  assert.equal(first.status,'failed');assert.equal(first.used,1);
+  assert.equal(first.events[0].result,'retry');
+  assert.equal(second.root,first.root);assert.equal(second.id,first.id);
+  assert.deepEqual(second.frets,first.frets);assert.notEqual(second.frets,first.frets);
+  assert.equal(second.used,0);assert.equal(second.paused,false);assert.equal(second.deadline,25000);
+  assert.equal(second.submit(C.shape(8,'major'),6000),'correct');
+  assert.equal(second.retry(7000),null);
+});
+
+test('Retry does not add a second miss to an already graded wrong answer',()=>{
+  const r=make('guess');r.submit('Cm',2000);const next=r.retry(3000);
+  assert.equal(r.used,1);assert.deepEqual(r.events.map(e=>e.result),['wrong']);
+  assert.equal(next.status,'active');assert.equal(next.submit('C',4000),'correct');
+});
+
+test('Repeated retries keep all failed tries, the question number, and score a later success',()=>{
+  const data={history:[],stats:{}},p=new C.PracticeRound(2);
+  for(let attempt=1;attempt<=3;attempt++){
+    p.add(result('failed'));assert.equal(p.results[0].attempt,attempt);
+    assert.equal(p.retryLast(),true);assert.equal(p.complete,false);
+    assert.equal(p.results.length,0);assert.equal(p.attemptNumber,attempt+1);
+    assert.equal(p.commit(data),false);
+  }
+  p.add(result());assert.equal(p.results[0].attempt,4);
+  assert.equal(p.retryLast(),false);p.add(result());
+  assert.equal(p.complete,true);assert.equal(p.correct,2);assert.equal(p.failed,3);
+  assert.equal(p.commit(data),true);assert.equal(p.commit(data),false);
+  assert.deepEqual(data.history.map(r=>[r.question,r.attempt,r.result]),[[1,1,'failed'],[1,2,'failed'],[1,3,'failed'],[1,4,'correct'],[2,1,'correct']]);
+  assert.equal(data.stats['guess:0:major'].failed,3);
+  assert.equal(data.stats['guess:0:major'].correct,2);
+});
+
+test('Retry after the final saved failure appends only new results and never erases old scores',()=>{
+  const data={history:[],stats:{}},p=new C.PracticeRound(1);
+  p.add(result('failed'));p.commit(data);
+  p.retryLast();assert.equal(p.complete,false);assert.equal(p.commit(data),false);
+  assert.equal(data.history.length,1); // quitting the pending retry retains saved failure
+  p.add(result('failed'));p.commit(data);assert.equal(data.history.length,2);
+  p.retryLast();p.add(result());p.commit(data);
+  assert.equal(data.history.length,3);assert.equal(p.commit(data),false);
+  assert.equal(data.stats['guess:0:major'].failed,2);
+  assert.equal(data.stats['guess:0:major'].correct,1);
+});

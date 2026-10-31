@@ -4,6 +4,8 @@ import threading
 import time
 from PySide6.QtCore import QThread, Signal
 
+COMMANDS = ('go', 'next', 'retry', 'quit')
+
 
 class VoiceCommands(QThread):
     command = Signal(str)
@@ -32,7 +34,7 @@ class VoiceCommands(QThread):
             events.owner = self
             grammar = context.CreateGrammar(1)
             configure_grammar(grammar)
-            self.status.emit('Voice ready · '+token.GetDescription()+' · Go / Next / Quit')
+            self.status.emit('Voice ready · '+token.GetDescription()+' · Go / Next / Retry / Quit')
             while not self.stopping.wait(.02): pythoncom.PumpWaitingMessages()
         except Exception as exc:
             logging.exception('Painter voice commands failed')
@@ -60,7 +62,7 @@ class RecognitionEvents:
         phrase=win32com.client.Dispatch(result).PhraseInfo
         word=phrase.GetText().strip().lower()
         now=time.monotonic()
-        if self.owner and word in ('go','next','quit') and phrase.Rule.Confidence>=0 and now-self.last>1.2 and not self.owner.stopping.is_set():
+        if self.owner and word in COMMANDS and phrase.Rule.Confidence>=0 and now-self.last>1.2 and not self.owner.stopping.is_set():
             self.last=now
             logging.info('Painter voice accepted command=%s',word)
             self.owner.command.emit(word)
@@ -68,6 +70,6 @@ class RecognitionEvents:
 
 def configure_grammar(grammar):
     rule=grammar.Rules.Add('commands',33,1)
-    for word in ('go','next','quit'):rule.InitialState.AddWordTransition(None,word)
+    for word in COMMANDS:rule.InitialState.AddWordTransition(None,word)
     grammar.Rules.Commit()
     grammar.CmdSetRuleState('commands',1)

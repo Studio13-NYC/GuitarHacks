@@ -100,25 +100,57 @@
     }
     pause(now){if(this.status==='active'&&!this.paused){this.remaining=Math.max(0,this.deadline-now);this.paused=true;}}
     resume(now){if(this.paused){this.deadline=now+this.remaining;this.paused=false;}}
+    retry(now){
+      if(this.status==='correct')return null;
+      if(this.status==='active'){
+        // An already graded miss is retained once; abandoning an ungraded try is a miss.
+        if(!['wrong','timeout'].includes(this.last))this.fail('retry',now);
+        this.status='failed';
+      }
+      this.retried=true;
+      return new Round(this,now);
+    }
   }
   // Keep unfinished rounds separate from saved history so Reset can discard them.
   class PracticeRound {
     constructor(count=10) {
       this.count=Math.min(100,Math.max(1,Math.round(Number(count))||10));
-      this.results=[];this.saved=false;
+      this.id=globalThis.crypto?.randomUUID?.()||Date.now().toString(36)+'-'+Math.random().toString(36).slice(2);
+      this.started=new Date().toISOString();this.plan=[];
+      this.results=[];this.priorAttempts=[];this.saved=false;this.committed=new Set();
     }
     get complete(){return this.results.length===this.count;}
-    get correct(){return this.results.filter(r=>r.result==='correct').length;}
-    get failed(){return this.results.filter(r=>r.result==='failed').length;}
-    add(result){if(!this.complete)this.results.push(result);}
+    get attempts(){return [...this.priorAttempts,...this.results].sort((a,b)=>a.question-b.question||a.attempt-b.attempt);}
+    get correct(){return this.attempts.filter(r=>r.result==='correct').length;}
+    get failed(){return this.attempts.filter(r=>r.result==='failed').length;}
+    get attemptNumber(){return 1+this.priorAttempts.filter(r=>r.question===this.results.length+1).length;}
+    add(result){if(!this.complete)this.results.push({...result,roundId:this.id,question:this.results.length+1,attempt:this.attemptNumber});}
+    retryLast(){
+      if(this.results.at(-1)?.result!=='failed')return false;
+      this.priorAttempts.push(this.results.pop());this.saved=false;return true;
+    }
     commit(data){
       if(!this.complete||this.saved)return false;
-      for(const r of this.results){
+      const pending=this.attempts.filter(r=>!this.committed.has(r));
+      for(const r of pending){
         const key=r.mode+':'+r.root+':'+r.id;
         const stats=data.stats[key]||(data.stats[key]={name:r.name,mode:r.mode,correct:0,failed:0,misses:0});
         stats[r.result]++;stats.misses+=r.events.filter(e=>e.result!=='correct').length;
+        this.committed.add(r);
       }
-      data.history=[...data.history,...this.results].slice(-300);
+      data.history=[...data.history,...pending].slice(-300);
+      const byType={};
+      for(const r of this.attempts){
+        const s=byType[r.id]||(byType[r.id]={correct:0,failed:0,misses:0,timeouts:0,retries:0,questions:0});
+        s[r.result]++;s.misses+=r.events.filter(e=>e.result!=='correct').length;
+        s.timeouts+=r.events.filter(e=>e.result==='timeout').length;
+        s.retries+=Number(r.attempt>1);s.questions+=Number(r.attempt===1);
+      }
+      data.rounds??=[];
+      const previous=data.rounds.find(r=>r.id===this.id);
+      const archive={id:this.id,mode:this.results[0].mode,started:this.started,completed:new Date().toISOString(),count:this.count,
+        seconds:this.results[0].seconds,limit:this.results[0].limit,byType,plan:this.plan};
+      if(previous)Object.assign(previous,archive);else data.rounds.push(archive);
       this.saved=true;return true;
     }
   }
