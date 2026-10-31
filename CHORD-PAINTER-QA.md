@@ -1,6 +1,6 @@
 # Chord Painter verification
 
-## Fretboard Explorer and clear incorrect guesses - October 31, 2026 (candidate)
+## Fretboard Explorer and clear incorrect guesses - October 31, 2026 (web deployed; desktop candidate)
 
 Home's former Find Everywhere card now opens Fretboard Explorer. The reference uses the shared chord library for named note/chord lookups and exposes the existing Find Everywhere exercise from a note result. Lookup is unscored, requires no audio or GPT, and shows all standard-tuning positions in the selected open–12/14/24 range. Root spelling is retained for flat/sharp chord names; supported chord types and slash bass are explicit. The existing separately published ChordLab Sites checkout is unchanged.
 
@@ -10,7 +10,7 @@ Incorrect Guess answers and timeouts clear the entry and retain typing focus whi
 - `.venv\Scripts\python.exe -m unittest test_home test_painter_listening`: 24 passed (`build/explorer-ui-tests.log`). Real Qt navigation preserves flash-card settings and leaves input closed; wrong-answer/timeout clearing and final review behavior are exercised.
 - `.venv\Scripts\python.exe -m unittest test_explorer_view`: 2 passed (`build/explorer-view-tests.log`). Real embedded lookup, selected-position detail, note handoff, fret range, invalid-input handling and visible result bounds are checked. Screenshots: `build/explorer-note.png`, `build/explorer-chord.png`.
 - Actual Edge browser: Cmaj7 tone list, open–24 columns, open B selection/details and native-only exercise visibility passed (`output/playwright/explorer-browser.png`). No user scores or audio were used.
-- Candidate build: `powershell -NoProfile -ExecutionPolicy Bypass -File .\build.ps1 -OutputDirectory build\explorer-release`; log `build/explorer-build.log`. Installation and Azure deployment are pending at this entry.
+- Candidate build: `powershell -NoProfile -ExecutionPolicy Bypass -File .\build.ps1 -OutputDirectory build\explorer-release`; log `build/explorer-build.log`. Desktop installation is awaiting approval. SHA-256: `6c26c9108d930c3f59ffaf0bfe4bdf0571409feb3692e8150730d4df4a28ed6d`. Seven packaged frontend assets match source; no env file is bundled. Azure deployment of `b31a22a` succeeded in [run 41237523963](https://github.com/Studio13-NYC/GuitarHacks/actions/runs/41237523963). The seven live assets match source. The same Edge lookup checks passed against the live `/explorer.html` page; only a missing favicon returned 404.
 
 ## Round review, career chart and local JSON - October 31, 2026 (installed and deployed)
 
