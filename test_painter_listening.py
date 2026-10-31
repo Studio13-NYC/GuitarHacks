@@ -350,7 +350,7 @@ class PainterListeningTests(unittest.TestCase):
     def test_review_failure_preserves_scores_and_stale_advice_cannot_replace_changed_notes(self):
         self.js("document.querySelector('[data-mode=guess]').click();document.getElementById('questions').value=1;document.getElementById('questions').dispatchEvent(new Event('change'));document.getElementById('limit').value=1;document.getElementById('limit').dispatchEvent(new Event('change'));document.getElementById('start').click();document.getElementById('guess-input').value='wrong';document.getElementById('guess-form').requestSubmit()")
         from unittest.mock import patch
-        with patch('painter_coach.credentials',return_value=('','gpt-5.4-mini')):
+        with patch('painter_coach.credentials',return_value=('','gpt-6.1-terra')):
             self.js("document.getElementById('analyze-comments').click()")
             QTest.qWait(100)
         self.assertIn('not connected',self.js("document.getElementById('coach-status').textContent"))

@@ -11,7 +11,7 @@ class CoachTests(unittest.TestCase):
 
     def test_request_contains_only_supplied_practice_data_and_no_tools(self):
         value={'mode':'guess','rows':[{'id':'major','failed':2}],'notes':'Less major today'}
-        body=request_body(json.dumps(value),'gpt-5.4-mini')
+        body=request_body(json.dumps(value),'gpt-6.1-terra')
         self.assertEqual(json.loads(body['input']),value)
         self.assertFalse(body['store']);self.assertNotIn('tools',body)
         self.assertTrue(body['text']['format']['strict'])
@@ -27,7 +27,7 @@ class CoachTests(unittest.TestCase):
 
     def test_missing_credentials_reports_problem_without_network_request(self):
         coach=PracticeCoach();received=[];coach.ready.connect(lambda *args:received.append(args))
-        with patch('painter_coach.credentials',return_value=('','gpt-5.4-mini')),patch.object(coach.network,'post') as post:
+        with patch('painter_coach.credentials',return_value=('','gpt-6.1-terra')),patch.object(coach.network,'post') as post:
             coach.review('request-1','{}');post.assert_not_called()
         self.assertEqual(received[0][0],'request-1')
         self.assertIn('not connected',json.loads(received[0][1])['error'])
