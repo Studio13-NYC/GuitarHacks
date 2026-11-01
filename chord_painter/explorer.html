@@ -8,13 +8,29 @@
     <button class="primary" type="submit">Show me</button>
     <label>Fret range<select id="lookup-range"><option value="12">Open–12</option><option value="14" selected>Open–14</option><option value="24">Open–24</option></select></label>
   </form>
+  <fieldset id="shape-controls" hidden><legend>Movable shapes</legend><div class="shape-choices">
+    <label><input type="checkbox" name="chord-shape" value="C"> C</label>
+    <label><input type="checkbox" name="chord-shape" value="A" checked> A</label>
+    <label><input type="checkbox" name="chord-shape" value="G"> G</label>
+    <label><input type="checkbox" name="chord-shape" value="E" checked> E</label>
+    <label><input type="checkbox" name="chord-shape" value="D"> D</label>
+    <span>Choose one or more. The letter names the shape, not the chord.</span>
+  </div></fieldset>
   <p id="lookup-error" role="alert"></p>
   <section id="lookup-result" aria-label="Lookup result">
     <div class="lookup-summary"><div><h2 id="lookup-title"></h2><p id="lookup-description"></p></div><div id="lookup-tones" class="tones"></div></div>
     <p id="lookup-help"></p>
-    <div class="lookup-scroll" tabindex="0" role="region" aria-label="Fretboard positions"><table id="lookup-board" aria-label="Notes on the fretboard"></table></div>
-    <p id="lookup-detail" role="status"></p>
+    <section id="shape-results" aria-label="Selected chord shapes" hidden>
+      <p id="shape-status" role="status"></p>
+      <div id="shape-diagrams"></div>
+      <p>Read diagrams from low E to high E. × = mute; ○ = open. Gold = root. Move every sounding string together, using a barre where needed. Some full C and G shapes need a wider stretch.</p>
+    </section>
+    <details id="neck-view" open><summary id="neck-summary" hidden>See selected shapes across the neck</summary>
+      <div class="lookup-scroll" tabindex="0" role="region" aria-label="Fretboard positions"><table id="lookup-board" aria-label="Notes on the fretboard"></table></div>
+      <p id="lookup-detail" role="status"></p>
+    </details>
   </section>
   <button id="find-everywhere" class="quiet" hidden>Practice this note · Find Everywhere →</button>
+  <p id="find-everywhere-availability" hidden>Desktop app required for the Find Everywhere listening exercise. Note and chord lookup work here without audio.</p>
   <details><summary>Supported chords</summary><p id="supported-chords"></p><p>Use any root, including sharps or flats. Slash chords such as C/E show the requested bass note. This reference is unscored and does not open your audio input.</p></details>
-</main><script src="core.js"></script><script src="explorer.js"></script></body></html>
+</main><script src="core.js"></script><script src="explorer.js"></script><script src="web-links.js"></script></body></html>

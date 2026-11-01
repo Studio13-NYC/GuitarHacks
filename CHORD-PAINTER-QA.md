@@ -1,5 +1,15 @@
 # Chord Painter verification
 
+## Public web and desktop release - November 1, 2026 (verified; publication pending)
+
+The user authorized committing/pushing the current changes, replacing the SWA, making Studio13-NYC/GuitarHacks public and publishing a Windows release. This supersedes the local-only/no-commit status recorded below. The latest quiz fixes and CAGED Explorer changes are included.
+
+34 Node checks and 24 real Qt checks passed. Real Edge exercised Home, shape filtering, visible disabled desktop functions, a browser without direct file-picker support, a completed Guess round, JSON export/import, empty fresh sessions and offline cached Home/practice. Session results did not create a browser backup. Screenshots and exact commands are listed in docs/web-release.md. A bounded scan of 192 historical blobs found no credential-pattern matches. The release is a portable Windows alpha; additional models, Jam, audio hardware setup and hosted GPT account access are not included.
+
+## Movable shapes - October 31, 2026 (installed locally; uncommitted)
+
+C/A/G/E/D checkbox selection, separate complete-voicing diagrams and an expandable filtered neck view are implemented. 19 Node checks and 3 real Qt tests pass. All supplied patterns are transposed through all 12 keys and checked against the shared chord-tone definitions. See docs/fretboard-explorer.md for the explicit shape/quality coverage. Local build: `powershell -NoProfile -ExecutionPolicy Bypass -File .\build.ps1 -OutputDirectory build\explorer-shapes-release`. The Windows candidate is built; SHA-256 `b22e437011a2c05b687f4aa31dfd79f5c0f3bcd6ba339a8e0a3de5d589a3a875`. Five packaged frontend assets match source and no env file is bundled. Installed after explicit approval. Backup: `backups/explorer-shapes-install-20261031-163117`. The app closed gracefully; all four saved-data files matched the backup during replacement (the SQLite WAL/SHM and instance lock had closed normally). The installed executable matches the verified candidate. Reopened Explorer in Chord mode with B major and verified that unchecking A leaves only the E diagram, then restored A/E selection. Chord Painter JSON and the cue file still match after reopening; no startup error was logged. No commit, push or deployment is authorized for this update.
+
 ## Fretboard Explorer and clear incorrect guesses - October 31, 2026 (installed and deployed)
 
 Home's former Find Everywhere card now opens Fretboard Explorer. The reference uses the shared chord library for named note/chord lookups and exposes the existing Find Everywhere exercise from a note result. Lookup is unscored, requires no audio or GPT, and shows all standard-tuning positions in the selected open–12/14/24 range. Root spelling is retained for flat/sharp chord names; supported chord types and slash bass are explicit. The existing separately published ChordLab Sites checkout is unchanged.
@@ -155,3 +165,13 @@ The installed `FretboardFiend\release\GuitarHacks.exe` is now 232,003,436 bytes,
 - Web deployment succeeded at `https://guitarhacks-chord-painter.nickknyc.chatgpt.site` with the same owner-only access, source commit `248af1762d4f96a93b8f20d434737e88b9ea6387`, version `appgprj_6ade8fa6c9d88191a599fb01d819f3eb~appgver_894708cb15b481918e058a67f7bbf06f`, and service-worker cache v6. Existing browser/home-screen sessions may need to be closed and reopened while online for the waiting cache update to activate. No progress clearing is required.
 
 October 30 dot-label update installed at FretboardFiend/release/GuitarHacks.exe; SHA-256 FC06759965D5A0C37141E5609ACC029E61A113DA156F44F7E20298E58DF5FA6B. All four existing data files had identical hashes before and after replacement. The previous executable is backed up in backups/painter-labels-20261030/GuitarHacks.exe. No app was running when it was replaced. Launched with --painter.
+
+
+## October 31 quiz input fixes
+
+- Removed minor-major sevenths from the Seventh chords and Triads + sevenths question pools, including the Instant Display handoff. Identification and Explorer retain that chord type.
+- Half-diminished fraction notation is normalized before slash-bass parsing. `c 1/2 dim 7` and `C½dim7` grade as Cm7♭5; incorrect roots, fully diminished sevenths, and wrong slash basses still fail.
+- Correct and failed questions focus Next question. Real Return-key presses advance exactly one question and restore answer-box focus. Final-round review behavior is retained.
+- Validation: `node --test test_painter.cjs test_painter_career.cjs` (18 passed); `uv run --frozen python -m unittest test_painter_quiz -v` (2 passed in the actual Qt WebEngine view, using isolated temporary practice data and generated capture only). The UI check covered 100 questions from each quiz pool and the minor-major-seventh handoff.
+- Build command: `powershell -NoProfile -ExecutionPolicy Bypass -File .\build.ps1 -OutputDirectory build\quiz-fixes-candidate`. Candidate path: `D:\Studio13\Lab\Music\GuitarHacks\build\quiz-fixes-candidate\GuitarHacks.exe`; build log: `build/quiz-fixes-build.log`. Built successfully, then installed to `FretboardFiend/release/GuitarHacks.exe` after the user approved closing and restarting the app. The installed SHA-256 matches the candidate; packaged app.js, core.js, and index.html match the tested source. The old executable is retained under `backups/quiz-fixes-*`.
+- Matching changes are in the separate local `sites/chord-painter/dist` checkout; the public site has not been republished by this change. Desktop/offline cache version is 17; the older hosted checkout cache is 11.

@@ -44,6 +44,8 @@
   }
   function parse(text) {
     let s = String(text).trim().replace(/♭/g,'b').replace(/♯/g,'#').replace(/𝄫/g,'bb');
+    // Normalize the half-diminished fraction before splitting an optional bass note.
+    s = s.replace(/(?:1\s*\/\s*2|½)\s*(?=dim)/gi,'half');
     const parts = s.split('/');
     if(parts.length>2) return null;
     const readNote = n => {const m=n.trim().match(/^([A-Ga-g])([#b]{0,2})$/);return m ? mod(NATURAL[m[1].toUpperCase()]+[...m[2]].reduce((v,a)=>v+(a==='#'?1:-1),0)):null;};
@@ -52,8 +54,8 @@
     let suffix=m[2].trim().replace(/^M(?=7|$)/,'maj').replace(/Δ/g,'maj').toLowerCase().replace(/[\s()_-]/g,'');
     const aliases={'':'major',maj:'major',major:'major',m:'minor',min:'minor',minor:'minor',
       diminished:'dim','°':'dim',o:'dim',dom7:'7',dominant7:'7',major7:'maj7',majorseventh:'maj7',
-      min7:'m7',minor7:'m7',minorseventh:'m7',halfdim:'m7b5',halfdiminished:'m7b5',halfdiminished7:'m7b5',
-      'ø':'m7b5','ø7':'m7b5',min7b5:'m7b5','°7':'dim7',o7:'dim7',diminished7:'dim7',
+      min7:'m7',minor7:'m7',minorseventh:'m7',halfdim:'m7b5',halfdim7:'m7b5',halfdiminished:'m7b5',halfdiminished7:'m7b5',
+      'ø':'m7b5','ø7':'m7b5',min7b5:'m7b5',minor7b5:'m7b5','°7':'dim7',o7:'dim7',diminished7:'dim7',
       mmaj7:'mMaj7',minmaj7:'mMaj7',minormajor7:'mMaj7',sus:'sus4','+':'aug',augmented:'aug',
       major6:'6',min6:'m6',minor6:'m6'};
     const id=aliases[suffix] || suffix;

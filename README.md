@@ -1,5 +1,9 @@
 # GuitarHacks
 
+[Open the web app](https://ashy-flower-0dd2cfa0f.3.azurestaticapps.net/) · [Windows desktop download](https://github.com/Studio13-NYC/GuitarHacks/releases/tag/v0.1.0-alpha.1) · [Desktop setup and limitations](docs/desktop-download.md)
+
+The web edition includes Explorer and click-based Chord Painter. The Windows app adds native audio and integration tools; StemSlicer, MIDIfier and Jam require additional local setup. Browser results can use a local JSON file or temporary session with import/export.
+
 ## Source repository
 
 This repository contains the Windows app, local Chord Painter, StemSlicer and NeuralNote integration code, tests, build scripts, lessons, and app assets. It excludes installed executables, local environments, model weights, soundfonts, recordings, exported stems/MIDI, logs, and saved practice data. The independently managed `sites/chord-painter` and `NeuralNote/source` checkouts are not part of this repository; see their module setup guides. Clone/build setup still requires these local dependencies where applicable.
@@ -16,9 +20,9 @@ Choose **Chord Painter** from Home. Paint a six-string chord box, see note names
 
 The mint guitar-pick icon is embedded in the executable and shown on the window/taskbar. While the app is open, right-click its taskbar icon and choose **Pin to taskbar**. Windows receives an explicit `Studio13.GuitarHacks` identity, display name, embedded icon location and relaunch command pointing to the executable, preserving any launch arguments. Pinning remains your choice. Keep the executable at its current path after pinning; if you move it, unpin the old shortcut and pin the app from its new location.
 
-## Record with Jam (candidate)
+## Record with Jam
 
-The separate candidate at `build\jam-windows-midi-candidate\GuitarHacks.exe` adds local MIDI capture through the installed Windows MIDI Services SDK. It saves MIDI and original timestamped data for Guitar Pro import. The regular release has not been replaced. Jam's blank startup window and live guitar input remain unresolved; generated notes have passed the packaged recording and Guitar Pro score/tab checks. See [current setup and verification](JAM-MIDI-PLAN.md) for exact steps, prerequisites and limitations.
+Record with Jam provides local MIDI capture through the Windows MIDI Services SDK. Jam and the MIDI prerequisites are separate installations. See [setup and verification](JAM-MIDI-PLAN.md) for requirements and the limits of live-input verification; the desktop ZIP does not configure another machine's routing or include a Jam license.
 
 ## A practice run
 
@@ -61,7 +65,7 @@ Only reliable in-tolerance notes count as attempts. Unclear pitch, clipping, ove
 
 ## Fretboard Explorer and Find Everywhere
 
-From Home, open **Fretboard Explorer**. Choose Note or Chord, enter a name, and select **Show me**. See notes, intervals and all matching positions through fret 12, 14 or 24. Select a dot for string, fret, octave and frequency. Lookup is unscored and requires no audio connection. Chords use the same 15 types as Chord Painter; the map shows available chord tones rather than a full fingering. To practice a note, choose **Practice this note · Find Everywhere**.
+From Home, open **Fretboard Explorer**. Choose Note or Chord, enter a name, and select **Show me**. See notes, intervals and all matching positions through fret 12, 14 or 24. Select a dot for string, fret, octave and frequency. Lookup is unscored and requires no audio connection. Chords use the same 15 types as Chord Painter; C/A/G/E/D checkboxes select complete voicings and the expandable neck map shows their positions. To practice a note, choose **Practice this note · Find Everywhere**.
 
 Select a note and find every occurrence from open strings through fret 14, in any order. Each pitch has a quota equal to the number of physical positions that produce it. The stopwatch starts after calibration; the race ends when all quotas are filled. There are no forced gaps between successful answers. Mute briefly and pick again for each attempt.
 

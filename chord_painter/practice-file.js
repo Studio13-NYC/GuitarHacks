@@ -1,4 +1,4 @@
-/* The chosen JSON file is the only persistent copy of web practice data. */
+/* Practice data lives in a chosen JSON file or in memory until explicit export. */
 (function(root){
   'use strict';
   function parse(raw){
@@ -37,6 +37,18 @@
       return this.tail;
     }
   }
+  // Session mode never writes to disk, localStorage or IndexedDB. Export is explicit.
+  class SessionPractice {
+    constructor(raw,onStatus=()=>{}){parse(raw);this.raw=raw;this.onStatus=onStatus;this.pending=0;this.dirty=false;this.session=true;}
+    async save(raw){parse(raw);this.raw=raw;this.dirty=true;this.onStatus('Session only — export JSON to keep your results.');}
+    exported(){this.dirty=false;this.onStatus('JSON download requested. Keep that file to resume later.');}
+  }
+  function download(raw){
+    parse(raw);
+    const url=URL.createObjectURL(new Blob([raw],{type:'application/json'}));
+    const link=document.createElement('a');link.href=url;link.download='chord-painter.json';document.body.append(link);link.click();link.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),30000);
+  }
   async function choose(defaultData,onStatus){
     const $=id=>document.getElementById(id),dialog=$('practice-file-dialog');
     const supported=typeof root.showOpenFilePicker==='function'&&typeof root.showSaveFilePicker==='function';
@@ -46,11 +58,15 @@
     try{legacy=localStorage.getItem('chord-painter-v1');}catch{}
     $('practice-migrate').hidden=!legacy;
     if(legacy)message.textContent='Earlier browser results were found. Save them to JSON to keep them. Opening or creating a different file replaces that browser copy.';
-    if(!supported){message.textContent='Open this app in desktop Chrome or Edge to save directly to a local JSON file.';}
+    if(!supported){message.textContent='Direct saving is unavailable in this browser. Import a JSON file or practice without saving, then export JSON to keep your results. Desktop Chrome and Edge also offer automatic file saving.';}
     const buttons=['practice-open','practice-new','practice-migrate'].map($);
     buttons.forEach(button=>button.disabled=!supported);
     dialog.addEventListener('cancel',event=>event.preventDefault());dialog.showModal();
     return new Promise(resolve=>{
+      function session(raw){
+        const file=new SessionPractice(raw,onStatus);
+        onStatus('Session only — export JSON to keep your results.');dialog.close();resolve(file);
+      }
       async function select(kind){
         buttons.forEach(button=>button.disabled=true);
         try{
@@ -78,9 +94,17 @@
       $('practice-open').onclick=()=>select('open');
       $('practice-new').onclick=()=>select('new');
       $('practice-migrate').onclick=()=>select('migrate');
+      $('practice-session').onclick=()=>session(JSON.stringify(defaultData));
+      $('practice-import').onclick=()=>$('practice-import-file').click();
+      $('practice-import-file').onchange=async event=>{
+        const file=event.target.files[0];if(!file)return;
+        try{const raw=await file.text();parse(raw);session(raw);}
+        catch(error){message.textContent='Could not import: '+error.message;}
+        finally{event.target.value='';}
+      };
     });
   }
-  const api={parse,PracticeFile,choose};
+  const api={parse,PracticeFile,SessionPractice,download,choose};
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
   else root.PracticeFiles=api;
 })(typeof window==='undefined'?globalThis:window);

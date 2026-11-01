@@ -1,5 +1,11 @@
 # Chord Painter
 
+## Hosted web edition
+
+The SWA Home screen links to Explorer and `/practice`. Unsupported audio/integration tools are disabled with desktop explanations. Direct JSON saving is offered in supported desktop browsers. Every browser can instead practice in memory or import JSON, then use Settings → Export JSON to keep results. No hidden backup is created for session mode. See [web release details](docs/web-release.md) and [desktop download setup](docs/desktop-download.md).
+
+Chord lookup now offers C/A/G/E/D checkboxes, individual voicing diagrams and an expandable filtered neck map. E and A start selected; unavailable shape/quality combinations are identified explicitly.
+
 Source: `D:\Studio13\Lab\Music\GuitarHacks\chord_painter`.
 Windows entry: **Chord Painter** on the Home screen, or launch with `--painter`.
 
@@ -11,7 +17,7 @@ Calibration hides the quiz prompt and existing painted dots without discarding t
 
 ## Using the canvas
 
-**Explorer** opens the unscored Fretboard Explorer reference. Choose Note or Chord, enter a name (for example B, F# or B♭maj7), and choose Show me. The reference lists notes and intervals, highlights all matching positions through fret 12, 14 or 24, and shows string/fret/octave/frequency when a dot is selected. Root tones are gold. It uses Chord Painter's 15 chord types, preserves sharp/flat spelling, and accepts slash bass notes. Unsupported extensions are reported rather than guessed. The map shows available tones, not a complete fingering. In Windows, a note lookup offers **Practice this note · Find Everywhere**; the timed exercise still covers open–14. Lookup does not open audio, save scores, or call GPT. On the Azure site, Explorer opens in a separate tab so the paused game is preserved; the native listening exercise remains Windows-only in this bundle.
+**Explorer** opens the unscored Fretboard Explorer reference. Choose Note or Chord, enter a name (for example B, F# or B♭maj7), and choose Show me. The reference lists notes and intervals, highlights all matching positions through fret 12, 14 or 24, and shows string/fret/octave/frequency when a dot is selected. Root tones are gold. It uses Chord Painter's 15 chord types, preserves sharp/flat spelling, and accepts slash bass notes. Unsupported extensions are reported rather than guessed. C/A/G/E/D checkboxes select individual voicing diagrams, with their combined positions in the expandable neck map. In Windows, a note lookup offers **Practice this note · Find Everywhere**; the timed exercise still covers open–14. Lookup does not open audio, save scores, or call GPT. On the Azure site, Explorer opens in a separate tab so the paused game is preserved; the native listening exercise remains Windows-only in this bundle.
 
 Standard tuning, low E at the left, high e at the right. The initial C major chord is a movable E shape at fret 8: `8 10 10 9 8 8`. Root on low E chooses the anchor fret (0–12); changing it transposes every painted dot. Each string has at most one note. Click a fret to place or replace its dot; click the same dot to mute the string. The controls above the nut toggle open/muted. Gold dots are roots. **Show on dots: Note names / Intervals** independently controls the two labels, including open notes and accessible fret labels. Both start on; turn both off for plain dots. Choices persist locally and can change during a round without resetting the question, guesses or timer. Root color, tuning/string names, and the target chord remain visible. Arrow keys move between fret buttons; Enter or Space paints.
 
@@ -48,6 +54,8 @@ The Azure/browser bundle uses a user-selected JSON file in desktop Chrome or Edg
 To remove Chord Painter practice, close the app and delete its JSON file. Reopen and create a new file to start fresh. If it is deleted, moved or edited while open, saving stops with an explanation instead of silently recreating or overwriting it. Other tools' files (Flashcards SQLite, recordings, stems, MIDI exports) are separate and are not removed. Existing manual backups and operating-system/cloud-folder backups are outside this app's control. Pick a nonsynced local folder if you want the practice file only on that computer.
 
 Wrong typed guesses and expired guesses clear the entry box automatically. If another guess is available, typing focus stays in the box; blank submission does not consume a guess. Scores and earlier failures are retained.
+
+Minor-major seventh chords are excluded from both quiz families and the Instant Display-to-quiz handoff; they remain available for chord identification and Explorer lookup. Half-diminished answers accept `C 1/2 dim 7`, `C½dim7`, `C half dim 7`, and `C min 7 b5` as equivalent to `Cm7♭5`, with normal root and slash-bass checks. After a correct answer or exhausted guesses, Next question receives focus so Enter advances. The final question still opens the round review.
 
 ## Round review and career chart
 

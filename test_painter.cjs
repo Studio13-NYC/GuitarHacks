@@ -23,6 +23,14 @@ test('Ambiguous chord names and correct slash bass are accepted',()=>{
   assert.equal(C.accepts('Am7/E',frets),false);
   for(const text of ['Cdim7','Ebdim7','Gbdim7','Adim7'])assert.ok(C.accepts(text,C.shape(8,'dim7')));
 });
+
+test('Half-diminished fractions work without breaking slash-bass answers',()=>{
+  const frets=C.shape(8,'m7b5');
+  for(const answer of ['c 1/2 dim 7','C 1 / 2 diminished 7','C½dim7','C half dim 7','C min 7 b5','C minor 7 b5','C1/2dim7/C']){
+    assert.ok(C.accepts(answer,frets),answer);
+  }
+  for(const answer of ['C1/2dim7/Eb','C1/2','Cdim7','D1/2dim7'])assert.equal(C.accepts(answer,frets),false,answer);
+});
 test('Intervals use musical spelling, including the diminished seventh',()=>{
   assert.deepEqual(C.tone(0,9,'dim7'),{note:'B♭♭',degree:'♭♭7'});
   assert.deepEqual(C.tone(6,10,'major'),{note:'B♭',degree:'3'});

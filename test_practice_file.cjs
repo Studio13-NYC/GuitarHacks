@@ -1,6 +1,6 @@
 const test=require('node:test');
 const assert=require('node:assert/strict');
-const {PracticeFile,parse}=require('./chord_painter/practice-file.js');
+const {PracticeFile,SessionPractice,parse}=require('./chord_painter/practice-file.js');
 const value=n=>JSON.stringify({version:1,config:{},history:[{correct:n}],stats:{},rounds:[],practicePreferences:{}});
 function disk(raw){
   return {raw,name:'practice.json',exists:true,writes:[],fail:false,
@@ -32,4 +32,12 @@ test('failed write aborts and preserves the last good file',async()=>{
 });
 test('invalid practice input is rejected',()=>{
   for(const raw of ['null','[]','{}','{"version":1,"history":[],"stats":{},"config":{},"rounds":{}}'])assert.throws(()=>parse(raw));
+});
+test('session practice keeps imported data in memory and requires explicit export',async()=>{
+  const statuses=[],file=new SessionPractice(value(9),s=>statuses.push(s));
+  assert.equal(file.raw,value(9));assert.equal(file.dirty,false);
+  await file.save(value(10));assert.equal(file.raw,value(10));assert.equal(file.dirty,true);
+  file.exported();assert.equal(file.dirty,false);
+  assert.match(statuses.at(-1),/download requested/);
+  await assert.rejects(file.save('null'));assert.equal(file.raw,value(10));
 });

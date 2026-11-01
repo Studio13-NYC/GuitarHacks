@@ -12,16 +12,20 @@
   let data={version:1,config:{...defaults},history:[],stats:{}};
   let practiceFile=null;
   if(!bridge){
+    $('back').hidden=false;$('back').textContent='← Home';
+    $('back').onclick=()=>{location.href='./';};
     practiceFile=await PracticeFiles.choose(data,(message,error)=>{
       $('practice-file-status').textContent=message;
       if(error){data.readOnly=true;warn(message+' Close and reopen the app to choose a file.');}
     });
     $('practice-file-controls').hidden=false;
+    $('practice-file-disclosure').textContent=practiceFile.session?'This session is held in memory only. Export JSON before closing to keep it. Importing a file does not change the original file.':'Results, comments and settings stay in your chosen JSON file. Close the app and delete the file to start over.';
+    $('practice-file-export').onclick=()=>{PracticeFiles.download(JSON.stringify(data,null,2));practiceFile.exported?.();};
     $('practice-file-reopen').onclick=()=>{
       if(practiceFile.pending){warn('A save is still in progress. Wait for Saved before reopening.');return;}
-      if(confirm('Reopen practice? Any unfinished round will be discarded. Saved results stay in your JSON file.'))location.reload();
+      if(confirm(practiceFile.session?'Leave this session? Export JSON first to keep your results.':'Reopen practice? Any unfinished round will be discarded. Saved results stay in your JSON file.'))location.reload();
     };
-    addEventListener('beforeunload',event=>{if(practiceFile.pending){event.preventDefault();event.returnValue='';}});
+    addEventListener('beforeunload',event=>{if(practiceFile.pending||practiceFile.dirty){event.preventDefault();event.returnValue='';}});
   }
   try{
     const raw=bridge ? await new Promise(resolve=>bridge.load(resolve)) : practiceFile.raw;
@@ -49,6 +53,7 @@
   let pendingPracticePlan=null;
   const reviewBridge=bridge||(/^https?:$/.test(location.protocol)?createWebCoach():null);
   $('coach-signin').hidden=!!bridge;
+  $('web-coach-notice').hidden=!!bridge;
   const review=createPainterReview({data,save,bridge:reviewBridge,getMode:()=>mode,getTargets:targets,start:startRound,retry:retryQuestion,
     pauseForChart:()=>{if(locked())pauseForNavigation();$('settings-dialog').close();}});
   let preferredInputMode=bridge?'play':'click';
@@ -363,10 +368,11 @@
     if(inputMode==='play'&&locked()&&playActive&&calibrated)beginAnswer();
     render();
     if(practice.complete)review.open({id:practice.id,canRetry:round.status==='failed'});
+    else if(completed()&&!document.querySelector('dialog[open]'))$('next').focus({preventScroll:true});
     else if(mode==='guess'&&locked()&&!document.querySelector('dialog[open]'))$('guess-input').focus({preventScroll:true});
   }
   function targets(){
-    const ids=data.config.pool==='triads'?['major','minor','dim']:data.config.pool==='sevenths'?['7','maj7','m7','m7b5','dim7','mMaj7']:['major','minor','dim','7','maj7','m7','m7b5','dim7','mMaj7'];
+    const ids=data.config.pool==='triads'?['major','minor','dim']:data.config.pool==='sevenths'?['7','maj7','m7','m7b5','dim7']:['major','minor','dim','7','maj7','m7','m7b5','dim7'];
     const frets=data.config.keys==='all'?Array.from({length:12},(_,i)=>i+1):[data.config.rootFret];
     return frets.flatMap(fret=>ids.map(id=>({fret,root:C.rootAt(fret),id})));
   }
@@ -400,7 +406,7 @@
     if(b.dataset.mode==='guess'||inputMode!=='play')stopListening();
     clearListeningReview();
     const current=mode==='instant'?C.identify(frets,referenceRoot)[0]:null;
-    paintedTarget=b.dataset.mode==='guess'&&current?{root:current.root,id:current.id,fret:anchorFret,frets:[...frets]}:null;
+    paintedTarget=b.dataset.mode==='guess'&&current&&current.id!=='mMaj7'?{root:current.root,id:current.id,fret:anchorFret,frets:[...frets]}:null;
     mode=b.dataset.mode;round=null;practice=null;summary();referenceRoot=C.rootAt(data.config.rootFret);anchorFret=data.config.rootFret;
     inputMode=mode==='guess'?'click':preferredInputMode;
     frets=mode==='paint'?[null,null,null,null,null,null]:paintedTarget?[...paintedTarget.frets]:C.shape(anchorFret,data.config.quality);
