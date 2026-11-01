@@ -27,3 +27,7 @@ Real Edge checks used the same route mapping as `staticwebapp.config.json`: Home
 Before making the repository public, 192 historical blobs were scanned for OpenAI/GitHub token patterns, private key headers and Azure storage keys; no matches were found. This is a bounded automated scan, not a guarantee that all sensitive information has been identified. Personal recordings, saved data, environments, model weights and `.env` files are excluded by `.gitignore`.
 
 Windows release build: `powershell -NoProfile -ExecutionPolicy Bypass -File .\build.ps1 -OutputDirectory build\public-release`. The release ZIP contains the new executable, public setup documentation and third-party notices, without the existing installation's data. Publication and deployment verification are recorded in CHORD-PAINTER-QA.md.
+
+## Publication verified — November 1, 2026
+
+Commit `e71e896` deployed successfully in Azure run `41332468230`. The repository and `v0.1.0-alpha.1` Windows prerelease are public. Anonymous access to the ZIP was verified and its GitHub upload digest matches the local checksum. The browser workflow above passed on the live Azure origin as well as locally. The prior Windows installation was left running unchanged.
